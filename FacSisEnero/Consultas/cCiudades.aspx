@@ -10,7 +10,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+        
         <div>
+           
+  
+ 
+
 
         <div class="col-md-2">
                     <asp:DropDownList ID="BuscarPorDropDownList" runat="server" CssClass="form-control input-sm" >
@@ -20,17 +26,19 @@
                 </div>
         <div class = " col-md-6 ">
             <asp:TextBox ID="FiltroTextBox" runat="server" CssClass = " form-control input-sm "></asp:TextBox>
-        </div>
-        <div class=" col-md-1 col-ms-2 col-xs-4">
+             <div class=" col-md-1 col-ms-2 col-xs-4">
 
             <asp:Button ID="BuscarButton" runat="server" Class="btn btn-success input-sm" Text="Buscar" OnClick="BuscarButton_Click" />
         </div>
+        </div>
+       
             <div class=" col-md-12">
         <asp:GridView ID="DatosGridView" runat="server" class=" table table-condensed table-borered table-responsive " CellPadding="4" ForeColor="#333333" GridLines="None"></asp:GridView>
 
             </div>
+             </div>
     </form>
-    
-    </div>
+  
+   
 </body>
 </html>
