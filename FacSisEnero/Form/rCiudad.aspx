@@ -27,7 +27,7 @@
                                <div class="form-group">
                             <div class="col-sm-9 col-md-9">
                                 <asp:TextBox ID="IdciudadTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-                                </div>
+                         
                                 <div class=" col-sm-3 col-md-3">
                                 <asp:Button ID="BuscarBotton"  CssClass="btn btn-primary" Text="Buscar"  runat="server" OnClick="BuscarBotton_Click" />
                             </div> 
