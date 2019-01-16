@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace FacSisEnero.Form
 {
-    public partial class rUsuarios : System.Web.UI.Page
+    public partial class rUsuarioWebForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,7 @@ namespace FacSisEnero.Form
             usuarios.TipoUsuario = int.Parse(TipoUsuarioTextBox.Text);
             return usuarios;
 
-        } 
+        }
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace FacSisEnero.Form
             {
                 if (paso = repositorio.Guardar(usuarios))
                     Response.Write("<script>alert('Guardado Correctamente');</script>");
-           
+
                 else
                 {
                     Response.Write("<script>alert('Error al Guardar');</script>");
@@ -69,17 +69,11 @@ namespace FacSisEnero.Form
                     Response.Write("<script>alert('Error al Modificar');</script>");
                 }
             }
-
-        }
-
-        protected void BuscarTextBox_Click(object sender, EventArgs e)
-        {
-           
-
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
+
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             Usuarios usuarios = repositorio.Buscar(int.Parse(UsuarioIdTextBox.Text));
             if (usuarios != null)
@@ -95,11 +89,6 @@ namespace FacSisEnero.Form
             }
         }
 
-        protected void NuevoButton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
             BLL.RepositorioBase<Usuarios> repositorio = new BLL.RepositorioBase<Usuarios>();
@@ -113,5 +102,12 @@ namespace FacSisEnero.Form
                 repositorio.Eliminar(id);
             Response.Write("<script>alert(' Usuario Eliminada');</script>");
         }
+
+        protected void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+
+        }
     }
-    }
+}
+    

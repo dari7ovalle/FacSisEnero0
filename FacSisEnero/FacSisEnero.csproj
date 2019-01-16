@@ -79,7 +79,7 @@
     <Content Include="Form\rClientes.aspx" />
     <Content Include="Css\loginStyle.css" />
     <Content Include="Css\my-login.css" />
-    <Content Include="Form\rUsuarios.aspx" />
+    <Content Include="Form\rUsuarioWebForm.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\dialog.js" />
@@ -119,12 +119,12 @@
     <Compile Include="Form\rClientes.aspx.designer.cs">
       <DependentUpon>rClientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Form\rUsuarios.aspx.cs">
-      <DependentUpon>rUsuarios.aspx</DependentUpon>
+    <Compile Include="Form\rUsuarioWebForm.aspx.cs">
+      <DependentUpon>rUsuarioWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Form\rUsuarios.aspx.designer.cs">
-      <DependentUpon>rUsuarios.aspx</DependentUpon>
+    <Compile Include="Form\rUsuarioWebForm.aspx.designer.cs">
+      <DependentUpon>rUsuarioWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

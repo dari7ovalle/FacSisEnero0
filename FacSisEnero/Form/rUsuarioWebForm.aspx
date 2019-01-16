@@ -1,21 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="rUsuarios.aspx.cs" Inherits="FacSisEnero.Form.rUsuarios" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link href="../bootstrap.min.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="../js/jquery.js"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-    <title>Registro de Usuarios</title>
-</head>
-<body>
-
-    <form id="form1" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rUsuarioWebForm.aspx.cs" Inherits="FacSisEnero.Form.rUsuarioWebForm" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   
+   
 
         <div class="container">
             <h3>Registro Usuario</h3>
@@ -61,9 +49,9 @@
                 <asp:TextBox ID="TipoUsuarioTextBox" runat="server" CssClass="form-control " placeholder="Ingrese tipo de usuario"></asp:TextBox>
             </div>
         </div>
-        <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" class="btn btn-outline-secondary" OnClick="NuevoButton_Click" />
+        <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" class="btn btn-outline-secondary" OnClick="NuevoButton_Click"  />
         <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success" OnClick="GuardarButton_Click" />
-        <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" class="btn btn-danger" OnClick="EliminarButton_Click" />
+        <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" class="btn btn-danger" OnClick="EliminarButton_Click"  />
 
 
 
@@ -72,6 +60,7 @@
 
 
 
-    </form>
-</body>
-</html>
+
+
+
+</asp:Content>
