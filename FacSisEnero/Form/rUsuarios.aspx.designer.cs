@@ -31,13 +31,13 @@ namespace FacSisEnero.Form {
         protected global::System.Web.UI.WebControls.TextBox UsuarioIdTextBox;
         
         /// <summary>
-        /// BuscarTextBox control.
+        /// BuscarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BuscarTextBox;
+        protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
         /// Label2 control.
