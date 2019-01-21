@@ -6,6 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Threading.Tasks;
+
 
 namespace FacSisEnero.Form
 {
@@ -20,20 +26,52 @@ namespace FacSisEnero.Form
             UsuarioIdTextBox.Text = " ";
             NombreTextBox.Text = " ";
             ContrasenaTextBox.Text = "";
-            TipoUsuarioTextBox.Text = " ";
+            // TipoUsuarioTextBox.Text = " ";
+            ConfirmarTextBox1.Text = " ";
 
         }
         private Usuarios LlenarClase(Usuarios usuarios)
         {
 
+
             usuarios.Nombres = NombreTextBox.Text;
             usuarios.Contracena = ContrasenaTextBox.Text;
-            usuarios.TipoUsuario = int.Parse(TipoUsuarioTextBox.Text);
+            // usuarios.TipoUsuario = int.Parse(TipoUsuarioTextBox.Text);
+            if (HombreRadioButton.Checked)
+            {
+                usuarios.TipoUsuario = 0;
+            }
+            else
+            {
+                usuarios.TipoUsuario = 1;
+            }
             return usuarios;
 
         }
 
-        protected void GuardarButton_Click(object sender, EventArgs e)
+        private bool CanSave()
+        {
+            bool flag = true;
+            if (UsuarioIdTextBox.Text == string.Empty)
+            {
+
+                Response.Write("<script>alert('error selecione un Id valido ');</script>");
+                flag = false;
+            }
+            if (NombreTextBox.Text == string.Empty)
+            {
+                Response.Write("<script>alert('llenar campo nombre ');</script>");
+                flag = false;
+            }
+
+            if (ContrasenaTextBox.Text == string.Empty || ConfirmarTextBox1.Text==string.Empty)
+            {
+                Response.Write("<script>alert('llenar campo comtraseña ');</script>");
+                flag = false;
+            }
+            return flag;
+        }
+            protected void GuardarButton_Click(object sender, EventArgs e)
         {
             BLL.RepositorioBase<Usuarios> repositorio = new BLL.RepositorioBase<Usuarios>();
             Usuarios usuarios = new Usuarios();
@@ -41,32 +79,34 @@ namespace FacSisEnero.Form
 
             //todo: validaciones adicionales
             LlenarClase(usuarios);
-
-            if (usuarios.UsuarioId == 0)
+            if (CanSave())
             {
-                if (paso = repositorio.Guardar(usuarios))
-                    Response.Write("<script>alert('Guardado Correctamente');</script>");
-
-                else
+                if (usuarios.UsuarioId == 0)
                 {
-                    Response.Write("<script>alert('Error al Guardar');</script>");
-                }
-                Limpiar();
-            }
+                    if (paso = repositorio.Guardar(usuarios))
+                        Response.Write("<script>alert('Guardado Correctamente');</script>");
 
-
-
-
-            else
-            {
-                if (paso = repositorio.Modificar(usuarios))
-                {
-                    Response.Write("<script>alert('Modificado Correctamente');</script>");
+                    else
+                    {
+                        Response.Write("<script>alert('Error al Guardar');</script>");
+                    }
                     Limpiar();
                 }
+
+
+
+
                 else
                 {
-                    Response.Write("<script>alert('Error al Modificar');</script>");
+                    if (paso = repositorio.Modificar(usuarios))
+                    {
+                        Response.Write("<script>alert('Modificado Correctamente');</script>");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Error al Modificar');</script>");
+                    }
                 }
             }
         }
@@ -80,7 +120,16 @@ namespace FacSisEnero.Form
             {
                 NombreTextBox.Text = usuarios.Nombres;
                 ContrasenaTextBox.Text = usuarios.Contracena;
-                TipoUsuarioTextBox.Text = usuarios.TipoUsuario.ToString();
+                ConfirmarTextBox1.Text = usuarios.Contracena;
+                // TipoUsuarioTextBox.Text = usuarios.TipoUsuario.ToString();
+                if (usuarios.TipoUsuario == 0)
+                {
+                    HombreRadioButton.Checked = true;
+                }
+                else
+                {
+                    MujerRadioButton.Checked = true;
+                }
             }
             else
             {

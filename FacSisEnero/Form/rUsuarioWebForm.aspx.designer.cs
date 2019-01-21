@@ -67,22 +67,40 @@ namespace FacSisEnero.Form {
         protected global::System.Web.UI.WebControls.TextBox ContrasenaTextBox;
         
         /// <summary>
-        /// Label7 control.
+        /// Labe2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label Labe2;
         
         /// <summary>
-        /// TipoUsuarioTextBox control.
+        /// ConfirmarTextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TipoUsuarioTextBox;
+        protected global::System.Web.UI.WebControls.TextBox ConfirmarTextBox1;
+        
+        /// <summary>
+        /// HombreRadioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton HombreRadioButton;
+        
+        /// <summary>
+        /// MujerRadioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton MujerRadioButton;
         
         /// <summary>
         /// NuevoButton control.

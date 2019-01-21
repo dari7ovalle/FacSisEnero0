@@ -75,6 +75,7 @@
   <ItemGroup>
     <Content Include="Consultas\cCiudades.aspx" />
     <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Default.aspx" />
     <Content Include="Form\rCiudad.aspx" />
     <Content Include="Form\rClientes.aspx" />
     <Content Include="Css\loginStyle.css" />
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Consultas\cCiudades.aspx.designer.cs">
       <DependentUpon>cCiudades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form\rCiudad.aspx.cs">
       <DependentUpon>rCiudad.aspx</DependentUpon>
