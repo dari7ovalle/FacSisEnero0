@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace FacSisEnero.Consultas
 {
-    public partial class cCiudades : System.Web.UI.Page
+    public partial class cUsuarios : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,18 +18,18 @@ namespace FacSisEnero.Consultas
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            Expression<Func<Ciudades, bool>> filtro = x => true;
-            BLL.RepositorioBase<Ciudades> repositorio = new BLL.RepositorioBase<Ciudades>();
+            Expression<Func<Usuarios, bool>> filtro = x => true;
+            BLL.RepositorioBase<Usuarios> repositorio = new BLL.RepositorioBase<Usuarios>();
 
             int id;
-            
-            switch (BuscarPorDropDownList.SelectedIndex)
+
+            switch (BuscarDropDownList.SelectedIndex)
             {
                 case 0://ID
                        // id =  Utilitarios.Utils.ToInt(FiltroTextBox.Text);
 
                     int.TryParse(FiltroTextBox.Text, out id);
-                    filtro = c => c.CiudadId == id;
+                    filtro = c => c.UsuarioId == id;
                     //
                     break;
                 case 1:// nombre
@@ -42,4 +42,3 @@ namespace FacSisEnero.Consultas
         }
     }
 }
-    

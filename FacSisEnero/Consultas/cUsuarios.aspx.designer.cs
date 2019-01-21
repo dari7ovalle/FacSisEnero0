@@ -10,25 +10,16 @@
 namespace FacSisEnero.Consultas {
     
     
-    public partial class cCiudades {
+    public partial class cUsuarios {
         
         /// <summary>
-        /// form1 control.
+        /// BuscarDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// BuscarPorDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList BuscarPorDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList BuscarDropDownList;
         
         /// <summary>
         /// FiltroTextBox control.

@@ -73,7 +73,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Consultas\cCiudades.aspx" />
+    <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="Css\bootstrap.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="Form\rCiudad.aspx" />
@@ -99,12 +99,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consultas\cCiudades.aspx.cs">
-      <DependentUpon>cCiudades.aspx</DependentUpon>
+    <Compile Include="Consultas\cUsuarios.aspx.cs">
+      <DependentUpon>cUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\cCiudades.aspx.designer.cs">
-      <DependentUpon>cCiudades.aspx</DependentUpon>
+    <Compile Include="Consultas\cUsuarios.aspx.designer.cs">
+      <DependentUpon>cUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

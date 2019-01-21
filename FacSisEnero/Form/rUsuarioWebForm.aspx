@@ -30,7 +30,7 @@
         <div class="col-xs-2 col-md-2">
             <asp:Label ID="Label2" runat="server" Text="Nombre:"></asp:Label>
         </div>
-        <div class="col-xs-10 col-md-10">
+        <div class="col-xs-10 col-md-5">
             <asp:TextBox ID="NombreTextBox" runat="server" CssClass="form-control " placeholder="Ingrese un Nombre"></asp:TextBox>
         </div>
     </div>
@@ -38,14 +38,14 @@
         <div class="col-xs-2 col-md-2">
             <asp:Label ID="Label6" runat="server" Text="Contrasena:"></asp:Label>
         </div>
-        <div class="col-xs-10 col-md-10">
+        <div class="col-xs-10 col-md-5">
             <asp:TextBox ID="ContrasenaTextBox" runat="server" CssClass="form-control " placeholder="Ingrese una Contrasena"></asp:TextBox>
         </div>
         <div class="form-group">
         <div class="col-xs-2 col-md-2">
             <asp:Label ID="Labe2" runat="server" Text="Contraceña:"></asp:Label>
         </div>
-        <div class="col-xs-10 col-md-10">
+        <div class="col-xs-10 col-md-5">
             <asp:TextBox ID="ConfirmarTextBox1" runat="server" CssClass="form-control " placeholder="Confirmar Contraceña "></asp:TextBox>
         </div>
       
