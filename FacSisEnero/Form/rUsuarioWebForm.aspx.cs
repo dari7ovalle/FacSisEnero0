@@ -49,28 +49,16 @@ namespace FacSisEnero.Form
 
         }
 
-        private bool CanSave()
+       private  bool  confirmarContrasena()
         {
-            bool flag = true;
-            if (UsuarioIdTextBox.Text == string.Empty)
+            if (ContrasenaTextBox.Text == ConfirmarTextBox1.Text)
             {
+                return true;
+            }
+            return false;
+        } 
 
-                Response.Write("<script>alert('error selecione un Id valido ');</script>");
-                flag = false;
-            }
-            if (NombreTextBox.Text == string.Empty)
-            {
-                Response.Write("<script>alert('llenar campo nombre ');</script>");
-                flag = false;
-            }
-
-            if (ContrasenaTextBox.Text == string.Empty || ConfirmarTextBox1.Text==string.Empty)
-            {
-                Response.Write("<script>alert('llenar campo comtraseña ');</script>");
-                flag = false;
-            }
-            return flag;
-        }
+       
             protected void GuardarButton_Click(object sender, EventArgs e)
         {
             BLL.RepositorioBase<Usuarios> repositorio = new BLL.RepositorioBase<Usuarios>();
@@ -79,9 +67,8 @@ namespace FacSisEnero.Form
 
             //todo: validaciones adicionales
             LlenarClase(usuarios);
-            if (CanSave())
-            {
-                if (usuarios.UsuarioId == 0)
+            
+                if (usuarios.UsuarioId == 0  )
                 {
                     if (paso = repositorio.Guardar(usuarios))
                         Response.Write("<script>alert('Guardado Correctamente');</script>");
@@ -96,7 +83,7 @@ namespace FacSisEnero.Form
 
 
 
-                else
+                else 
                 {
                     if (paso = repositorio.Modificar(usuarios))
                     {
@@ -109,7 +96,7 @@ namespace FacSisEnero.Form
                     }
                 }
             }
-        }
+        
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
