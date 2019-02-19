@@ -13,15 +13,6 @@ namespace FacSisEnero.Form {
     public partial class rCiudades {
         
         /// <summary>
-        /// BuscarLinkButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BuscarLinkButton;
-        
-        /// <summary>
         /// CiudadIdTextBox control.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace FacSisEnero.Form {
         protected global::System.Web.UI.WebControls.TextBox CiudadIdTextBox;
         
         /// <summary>
+        /// BuscarLinkButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BuscarLinkButton;
+        
+        /// <summary>
         /// NombreTextBox control.
         /// </summary>
         /// <remarks>
@@ -38,15 +38,6 @@ namespace FacSisEnero.Form {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
-        
-        /// <summary>
-        /// MensajeLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MensajeLabel;
         
         /// <summary>
         /// NuevoButton control.

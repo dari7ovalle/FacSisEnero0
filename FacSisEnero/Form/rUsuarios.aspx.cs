@@ -18,7 +18,7 @@ namespace FacSisEnero.Form
         private void Limpiar()
         {
             NombreUsuarioTextBox1.Text = " ";
-            NombreUsuarioTextBox1.Text = " ";
+            NombreTextBox.Text = " ";
             CorreoTextBox1.Text = " ";
             ContrasenaTextBox.Text = " ";
             ConfirmarTextBox1.Text = " ";
@@ -129,7 +129,7 @@ namespace FacSisEnero.Form
             else
             {
                 Utils.ShowToastr(this, "No Found", "Error", "error");
-                //Response.Write("<script>alert('Usuario  no existe');</script>");
+                
 
             }
 
