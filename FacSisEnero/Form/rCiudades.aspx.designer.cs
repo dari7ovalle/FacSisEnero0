@@ -7,55 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FacSisEnero.Css.Form {
+namespace FacSisEnero.Form {
     
     
-    public partial class rCiudad {
+    public partial class rCiudades {
         
         /// <summary>
-        /// form1 control.
+        /// BuscarLinkButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.LinkButton BuscarLinkButton;
         
         /// <summary>
-        /// Label1 control.
+        /// CiudadIdTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// IdciudadTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IdciudadTextBox;
-        
-        /// <summary>
-        /// BuscarBotton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BuscarBotton;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.TextBox CiudadIdTextBox;
         
         /// <summary>
         /// NombreTextBox control.
@@ -67,31 +40,31 @@ namespace FacSisEnero.Css.Form {
         protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// MensajeLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label MensajeLabel;
         
         /// <summary>
-        /// GuardarButton control.
+        /// NuevoButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GuardarButton;
+        protected global::System.Web.UI.WebControls.Button NuevoButton;
         
         /// <summary>
-        /// ButtonNuevo control.
+        /// GuadarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonNuevo;
+        protected global::System.Web.UI.WebControls.Button GuadarButton;
         
         /// <summary>
         /// EliminarButton control.

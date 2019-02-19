@@ -18,6 +18,7 @@ namespace SisAgroVeterinaria.Entidades
         public string Direccion { get; set; }
         public string Celular { get; set; }
         public string Telefono { get; set; }
+        public DateTime Fecha { get; set; }
 
 
 
@@ -32,6 +33,7 @@ namespace SisAgroVeterinaria.Entidades
             this.Direccion = string.Empty;
             this.Celular = string.Empty;
             this.Telefono = string.Empty;
+            this.Fecha = DateTime.Now;
         }
         public Clientes(int ClienteId, string Nombres, string Apellido, int CiudadId, string Cedula, string Direccion, string Celular, string Telefono)
         {

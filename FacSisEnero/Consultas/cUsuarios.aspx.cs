@@ -33,9 +33,10 @@ namespace FacSisEnero.Consultas
                     //
                     break;
                 case 1:// nombre
-                    filtro = c => c.Nombres.Contains(FiltroTextBox.Text);
+                    filtro = c => c.Nombre.Contains(FiltroTextBox.Text);
                     break;
             }
+
 
             DatosGridView.DataSource = repositorio.GetList(filtro);
             DatosGridView.DataBind();

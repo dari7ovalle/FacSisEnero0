@@ -1,58 +1,85 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="rClientes.aspx.cs" Inherits="FacSisEnero.Css.Form.rClientes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rClientes.aspx.cs" Inherits="FacSisEnero.Form.rClientes" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="card">
+        <div class="card-header text-uppercase text-center text-primary">Registro Ciudades</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group col-md-2">
+                    <asp:Label Text="Id" class="text-primary" runat="server"></asp:Label>
+                    <asp:TextBox ID="ClienteIdTextBox" class="form-control input-group" AutoCompleteType="None" TextMode="Number" placeholder="0" runat="server" />
+                    <asp:RequiredFieldValidator ID="RFVClienteId" ValidationGroup="Buscar" ControlToValidate="ClienteIdTextBox" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                </div>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link href="../bootstrap.min.css" rel="stylesheet" />
-    <script src="../../js/jquery.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-     <div class="panel panel-primary">
-    <title>Registro De Cliente</title>
-    <style type="text/css">
-        #form1 {
-            height: 517px;
-            width: 273px;
-        }
-    </style>
-</head>
-<body style="width: 267px; height: 556px;">
+                <div class="form-group">
+                    <asp:LinkButton ID="BuscarLinkButton" ValidationGroup="Buscar" CssClass="btn btn-outline-info mt-4" runat="server">
+                        <span> </span> Buscar
+                </asp:LinkButton>
+                </div>
 
-    <form id="form1" runat="server">
-         <div class="panel-body">
-                <div class="form-horizontal col-md-12" role="form">
-                    <div class="form-group">
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <asp:Label Text="Nombre" runat="server" />
+                    <asp:TextBox ID="NombreTextBox" class="form-control input-sm" AutoCompleteType="Disabled" runat="server" placeholder="Nombres"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVNombre" ValidationGroup="Guardar" ControlToValidate="NombreTextBox" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="NombreTextBox" ForeColor="Red" Display="Dynamic" ErrorMessage="Porfavor Digite Solo Letras" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:Label Text="Apellido" runat="server" />
+                    <asp:TextBox ID="ApellidoTextBox" class="form-control input-sm" AutoCompleteType="Disabled" runat="server" placeholder="Apellidos"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVApellido" ValidationGroup="Guardar" ControlToValidate="ApellidoTextBox" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="ApellidoTextBox" ForeColor="Red" Display="Dynamic" ErrorMessage="Porfavor Digite Solo Letras" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <asp:Label Text="CiudadId" runat="server" />
+                    <asp:DropDownList ID="CiudadDropDownList" class="form-control input-sm" runat="server">
+                        <asp:ListItem Selected="True">Seleccione</asp:ListItem>
+                        <asp:ListItem Text="Nombres" />
+                    </asp:DropDownList>
+                    <%--<asp:CustomValidator ID="CiudadCustomValidator" runat="server" ValidationGroup="Guardar" ControlToValidate="CiudadDropDownList" ErrorMessage="Seleccione Un Ciudad" Display="Dynamic" ForeColor="Red" OnServerValidate="CustomValidator_ServerValidate" ></asp:CustomValidator>--%>
+                </div>
 
-        <asp:TextBox ID="ClienteTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-        <br />
-        CiudadId<br />
-        <asp:DropDownList ID="ClienteIdDropDownList" CssClass="form-control" runat="server">
-        </asp:DropDownList>
-         <br />
-        Nombre<br />
-        <asp:TextBox ID="NombresTextBox"  CssClass="form-control" runat="server" ></asp:TextBox>
-        
-        Apellido<br />
+                <div class="form-group col-md-3">
+                    <asp:Label Text="Direccion" runat="server" />
+                    <asp:TextBox ID="DireccionTextBox" class="form-control input-sm" AutoCompleteType="Disabled" runat="server" placeholder="Direccion"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="Guardar" ControlToValidate="DireccionTextBox" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                </div>
+    </div>
 
-        <asp:TextBox ID="ApellidosTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+    <div class="row">
+                <div class="form-group col-md-3">
+                    <asp:Label Text="Cedula" runat="server" />
+                    <asp:TextBox ID="CedulaTextBox" class="form-control input-sm" AutoCompleteType="Disabled" runat="server" MaxLength="11" placeholder="Cedula"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="Guardar" ControlToValidate="CedulaTextBox" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="IdRegularExpressionValidator" runat="server" ControlToValidate="CedulaTextBox" ForeColor="Red" Display="Dynamic" ErrorMessage="Porfavor ingrese un numero" ValidationExpression="(^\d*\.?\d*[0-9]+\d*$)|(^[0-9]+\d*\.\d*$)" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
+                </div>
 
-        <br />
-        <br />
-        Cedula<br />
-        <asp:TextBox ID="CedulaTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-        <br />
-        <asp:TextBox ID="DireccionTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                <%--Telefono--%>
+                <div class="form-group col-md-3">
+                    <asp:Label Text="Télefono" runat="server" />
+                    <asp:TextBox ID="TelefonoTextBox" class="form-control input-sm" AutoCompleteType="Disabled" runat="server" TextMode="Phone" MaxLength="10" placeholder="Telefono"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ValidationGroup="Guardar" ControlToValidate="TelefonoTextBox" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TelefonoTextBox" ForeColor="Red" Display="Dynamic" ErrorMessage="Porfavor ingrese un numero" ValidationExpression="(^\d*\.?\d*[0-9]+\d*$)|(^[0-9]+\d*\.\d*$)" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
+                </div>
 
-        <br />
-        Celular<br />
-        <asp:TextBox ID="CelularTextBox" CssClass="form-control"  runat="server"></asp:TextBox>
+            </div>
 
-        Telefono<br />
-        <asp:TextBox ID="TelefonoTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-        <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" />
-        <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
+            <div class="card-footer">
+                <div class="text-center">
+                    <div class="form-group" style="display: inline-block">
+                        <asp:Button Text="Nuevo" class="btn btn-outline-info btn-md" runat="server" ID="NuevoButton" />
+                        <asp:Button Text="Guardar" class="btn btn-outline-success btn-md" runat="server" ValidationGroup="Guardar" ID="GuadarButton" />
+                        <asp:Button Text="Eliminar" class="btn btn-outline-danger btn-md" runat="server" ID="EliminarButton" />
+                    </div>
+                </div>
+            </div>
+       
 
-        <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" />
-    </form>
-</body>
-</html>
+        </div>
+    </div>
+</asp:Content>
