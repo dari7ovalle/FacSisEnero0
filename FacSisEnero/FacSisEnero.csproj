@@ -96,6 +96,10 @@
     <Content Include="Css\my-login.css" />
     <Content Include="Form\rCiudades.aspx" />
     <Content Include="Form\rClientes.aspx" />
+    <Content Include="Form\rConfiguraciones.aspx" />
+    <Content Include="Form\rIventario.aspx" />
+    <Content Include="Form\rProducto.aspx" />
+    <Content Include="Form\rTipoProducto.aspx" />
     <Content Include="Form\rUsuarios.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -183,6 +187,34 @@
     </Compile>
     <Compile Include="Form\rClientes.aspx.designer.cs">
       <DependentUpon>rClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\rConfiguraciones.aspx.cs">
+      <DependentUpon>rConfiguraciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\rConfiguraciones.aspx.designer.cs">
+      <DependentUpon>rConfiguraciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\rIventario.aspx.cs">
+      <DependentUpon>rIventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\rIventario.aspx.designer.cs">
+      <DependentUpon>rIventario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\rProducto.aspx.cs">
+      <DependentUpon>rProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\rProducto.aspx.designer.cs">
+      <DependentUpon>rProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\rTipoProducto.aspx.cs">
+      <DependentUpon>rTipoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\rTipoProducto.aspx.designer.cs">
+      <DependentUpon>rTipoProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form\rUsuarios.aspx.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>

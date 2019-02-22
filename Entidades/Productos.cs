@@ -16,6 +16,7 @@ namespace SisAgroVeterinaria.Entidades
         public double Costo { get; set; }
         public double Precio { get; set; }
         public int Activo { get; set; }
+        public DateTime Fecha { get; set; }
 
 
 
@@ -27,11 +28,12 @@ namespace SisAgroVeterinaria.Entidades
             this.Costo = 0;
             this.Precio = 0;
             this.Activo = 0;
+            this.Fecha = DateTime.Now;
         }
 
 
 
-        public Productos(int ProductoId, string Nombre, int TipoProductoId, double Costo, double Precio ,int Activo)
+        public Productos(int ProductoId, string Nombre, int TipoProductoId, double Costo, double Precio ,int Activo, DateTime Fecha)
         {
             this.ProductoId = ProductoId;
             this.Nombre = Nombre;
@@ -39,6 +41,7 @@ namespace SisAgroVeterinaria.Entidades
             this.Costo = Costo;
             this.Precio = Precio;
             this.Activo = Activo;
+            this.Fecha = Fecha;
         }
 
 
