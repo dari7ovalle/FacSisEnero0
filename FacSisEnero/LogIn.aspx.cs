@@ -14,7 +14,7 @@ namespace FacSisEnero
     {
         RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
         Expression<Func<Usuarios, bool>> filtrar = x => true;
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -25,6 +25,7 @@ namespace FacSisEnero
 
         protected void iniciarSButton_Click(object sender, EventArgs e)
         {
+
             UserRepositorio.Autenticar(emailTextBox.Text, passwordTextBox.Text, this);
         }
     }

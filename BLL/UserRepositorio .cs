@@ -9,8 +9,10 @@ using System.Web.UI;
 
 namespace BLL
 {
-   public class UserRepositorio : RepositorioBase<Usuarios>
+    public class UserRepositorio : RepositorioBase<Usuarios>
     {
+        public static int id_Usuario = 0;
+
         public UserRepositorio()
         {
 
@@ -18,16 +20,26 @@ namespace BLL
         public static void Autenticar(string email, string clave, Page page)
         {
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
-            System.Linq.Expressions.Expression<Func<Usuarios, bool>> filtrar = x => true;
+            //System.Linq.Expressions.Expression<Func<Usuarios, bool>> filtrar = x => true;
             Usuarios usuario = new Usuarios();
+            List<Usuarios> listUsuarios = new List<Usuarios>();
 
-            filtrar = t => t.Email.Equals(email) && t.Clave.Equals(clave);
+            listUsuarios = repositorio.GetList(x => x.Email == email && x.Clave == clave);
+            usuario = (listUsuarios != null && listUsuarios.Count > 0) ? listUsuarios[0] : null;
 
-            if (repositorio.GetList(filtrar).Count() != 0)
-                FormsAuthentication.RedirectFromLoginPage(usuario.Email, true);
+            //filtrar = t => t.Email.Equals(email) && t.Clave.Equals(clave);
+
+
+
+            if (usuario != null)
+            {
+                id_Usuario = usuario.UsuarioId;
+                FormsAuthentication.RedirectFromLoginPage(usuario.NombreUsuario, true);
+            }
+
             else { }
 
-                //ScriptManager.RegisterStartupScript(page, typeof(Page), "toastr_message", script: "toastr['error'] ('Usuario o Contraseña Incorrecto');", addScriptTags: true);
+            //ScriptManager.RegisterStartupScript(page, typeof(Page), "toastr_message", script: "toastr['error'] ('Usuario o Contraseña Incorrecto');", addScriptTags: true);
 
         }
     }

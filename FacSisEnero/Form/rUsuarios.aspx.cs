@@ -30,8 +30,6 @@ namespace FacSisEnero.Form
         private Usuarios LlenaClase(Usuarios usuario)
         {
 
-
-
             usuario.Nombre = NombreUsuarioTextBox1.Text;
             usuario.NombreUsuario = NombreUsuarioTextBox1.Text;
             usuario.Email = CorreoTextBox1.Text;

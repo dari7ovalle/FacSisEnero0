@@ -28,10 +28,8 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link"   href="/Form/rrVentas.aspx">Venta  <span class="sr-only">(current)</span></a>
                 </li>
-
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registros
                     </a>
@@ -39,6 +37,11 @@
                         <a class="dropdown-item" href="/Form/rUsuarios.aspx">Usuarios</a>
                         <a class="dropdown-item" href="/Form/rCiudades.aspx">Ciudades</a>
                         <a class="dropdown-item" href="/Form/rClientes.aspx">Clientes</a>
+                         <a class="dropdown-item" href="/Form/rIventario.aspx"> Inventario</a>
+                          <a class="dropdown-item" href="/Form/rProducto.aspx"> Productos</a>
+                          <a class="dropdown-item" href="/Form/rTipoProducto.aspx">TipoProducto </a>
+                          <a class="dropdown-item" href="/Form/rConfiguraciones.aspx"> Configuraciones</a>
+
                     </div>
                 </li>
 

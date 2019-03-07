@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SisAgroVeterinaria.Entidades
 {
+    [Serializable]
    public class Productos
     {
         [Key]

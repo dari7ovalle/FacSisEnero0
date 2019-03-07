@@ -67,7 +67,7 @@
                 <div class="text-center">
                     <div class="form-group" style="display: inline-block">
                         <asp:Button Text="Nuevo" class="btn btn-outline-info btn-md" runat="server" ID="NuevoButton"  />
-                        <asp:Button Text="Guardar" class="btn btn-outline-success btn-md" runat="server" ValidationGroup="Guardar" ID="GuadarButton"  />
+                        <asp:Button Text="Guardar" class="btn btn-outline-success btn-md" runat="server" ValidationGroup="Guardar" ID="GuadarButton" OnClick="GuadarButton_Click"  />
                         <asp:Button Text="Eliminar" class="btn btn-outline-danger btn-md" runat="server" ID="EliminarButton"  />
                     </div>
                 </div>
@@ -77,4 +77,6 @@
         </div>
     </div>
 
+</div>
+    </div>
 </asp:Content>

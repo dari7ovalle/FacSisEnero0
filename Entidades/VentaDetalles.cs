@@ -1,30 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SisAgroVeterinaria.Entidades
 {
+    [Serializable]
    public  class VentaDetalles
     {
         [Key]
-        public int VentaDetallesId { get; set; }
+        public int Id { get; set; }
         public int VentaId { get; set; }
         public int ProductoId { get; set; }
         public int Cantidad { get; set; }
         public int Precio { get; set; }
         public double Importe { get; set; }
 
-
-       // public virtual List<Productos> producto { get; set; }
+        [ForeignKey("ProductoId")]
+        public virtual Productos producto { get; set; }
        
 
 
         public VentaDetalles()
         {
-            this.VentaDetallesId = 0;
+            this.Id = 0;
             this.VentaId = 0;
             this.ProductoId = 0;
             this.Cantidad = 0;
@@ -43,7 +45,7 @@ namespace SisAgroVeterinaria.Entidades
 
         public VentaDetalles(int VentaDetallesId, int VentaId, int ProductoId, int Cantidad, int Precio, double Importe)
         {
-            this.VentaDetallesId = VentaDetallesId;
+            this.Id = VentaDetallesId;
             this.VentaId = VentaId;
             this.ProductoId = ProductoId;
             this.Cantidad = Cantidad;

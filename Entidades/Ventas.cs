@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace SisAgroVeterinaria.Entidades
 {
+    [Serializable]
     public class Ventas
     {
         [Key]
         public int VentaId { get; set; }
         public int ClienteId { get; set; }
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public int ConfiguracionId { get; set; }
-        public int TipoVenta { get; set; }
+        public string TipoVenta { get; set; }
         public double TotalVenta { get; set; }
         public int UsuarioId { get; set; }
         public virtual List<VentaDetalles> Detalle { get; set; }
@@ -24,9 +25,9 @@ namespace SisAgroVeterinaria.Entidades
         {
             this.VentaId = 0;
             this.ClienteId = 0;
-            this.Fecha = string.Empty;
+            this.Fecha = DateTime.Now;
             this.ConfiguracionId = 0;
-            this.TipoVenta = 0;
+            this.TipoVenta = string.Empty;
             this.TotalVenta = 0;
             this.UsuarioId = 0;
             this.Detalle = new List<VentaDetalles>();
@@ -42,11 +43,11 @@ namespace SisAgroVeterinaria.Entidades
             this.Detalle.Clear();
         }
 
-        public Ventas(int VentaId, int ClienteId, string Fecha, int ConfiguracionId, int TipoVenta, double TotalVenta, int UsuarioId, List<VentaDetalles> detalle)
+        public Ventas(int VentaId, int ClienteId, DateTime Fecha, int ConfiguracionId, string TipoVenta, double TotalVenta, int UsuarioId, List<VentaDetalles> detalle)
         {
             this.VentaId = VentaId;
             this.ClienteId = ClienteId;
-            this.Fecha = string.Empty;
+            this.Fecha = DateTime.Now;
             this.ConfiguracionId = ConfiguracionId;
             this.TipoVenta = TipoVenta;
             this.TotalVenta = TotalVenta;

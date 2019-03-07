@@ -23,6 +23,13 @@ namespace FacSisEnero
 
             return retorno;
         }
+        public static double ToDouble(string valor)
+        {
+            double retorno = 0;
+            double.TryParse(valor, out retorno);
+
+            return retorno;
+        }
         public static void ShowToastr(this Page page, string message, string title, string type = "info")
         {
             page.ClientScript.RegisterStartupScript(page.GetType(), "toastr_message",

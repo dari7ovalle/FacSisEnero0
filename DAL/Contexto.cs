@@ -17,8 +17,7 @@ namespace DAL
         public DbSet<Productos> productos { get; set; }
         public DbSet<TipoProductos> tipoProductos { get; set; }
         public DbSet<Usuarios> usuarios { get; set; }
-        //public DbSet<VentaDetalles> ventaDetalles { get; set; }
-        //public DbSet<Ventas> ventas { get; set; }
+        public DbSet<Ventas> ventas { get; set; }
 
         
         public Contexto() : base("ConStr")
