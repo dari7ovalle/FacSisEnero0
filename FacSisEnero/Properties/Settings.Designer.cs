@@ -33,5 +33,16 @@ namespace FacSisEnero.Properties {
                 return ((string)(this["ConStr"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DARI\\DARI7OVALLES;Initial Catalog=FISEneroNewFinal;Integrated Securit" +
+            "y=True")]
+        public string FISEneroNewFinalConnectionString {
+            get {
+                return ((string)(this["FISEneroNewFinalConnectionString"]));
+            }
+        }
     }
 }

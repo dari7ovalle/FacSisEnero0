@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:LinkButton ID="BuscarLinkButton" ValidationGroup="Buscar" CssClass="btn btn-outline-info mt-4" runat="server" >
+                    <asp:LinkButton ID="BuscarLinkButton" ValidationGroup="Buscar" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click" >
                         <span> </span> Buscar
                     </asp:LinkButton>
                 </div>
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="form-group  col-md-3">
                     <asp:Label ID="Label5" runat="server" Text="Cantidad:"></asp:Label>
-                    <asp:TextBox ID="CantidadTextBox1" type="text" runat="server" TextMode="Phone" CssClass="form-control " placeholder="Ingrese un Cantidad " minlength="10" MaxLength="10"></asp:TextBox>
+                    <asp:TextBox ID="CantidadTextBox1" type="text" runat="server" TextMode="Phone" CssClass="form-control " placeholder="Ingrese un Cantidad " minlength="1" MaxLength="5"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ValidationGroup="Guardar" ControlToValidate="CantidadTextBox1" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="CantidadTextBox1" ForeColor="Red" Display="Dynamic" ErrorMessage="Porfavor ingrese un numero" ValidationExpression="(^\d*\.?\d*[0-9]+\d*$)|(^[0-9]+\d*\.\d*$)" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
                 </div>
@@ -60,9 +60,9 @@
             <div class="card-footer">
                 <div class="text-center">
                     <div class="form-group" style="display: inline-block">
-                        <asp:Button Text="Nuevo" class="btn btn-outline-info btn-md" runat="server" ID="NuevoButton" />
-                        <asp:Button Text="Guardar" class="btn btn-outline-success btn-md" runat="server" ValidationGroup="Guardar" ID="GuadarButton"  />
-                        <asp:Button Text="Eliminar" class="btn btn-outline-danger btn-md" runat="server" ID="EliminarButton" />
+                        <asp:Button Text="Nuevo" class="btn btn-outline-info btn-md" runat="server" ID="NuevoButton" OnClick="NuevoButton_Click" />
+                        <asp:Button Text="Guardar" class="btn btn-outline-success btn-md" runat="server" ValidationGroup="Guardar" ID="GuadarButton" OnClick="GuadarButton_Click1"  />
+                        <asp:Button Text="Eliminar" class="btn btn-outline-danger btn-md" runat="server" ID="EliminarButton" OnClick="EliminarButton_Click" />
                     </div>
                 </div>
             </div>

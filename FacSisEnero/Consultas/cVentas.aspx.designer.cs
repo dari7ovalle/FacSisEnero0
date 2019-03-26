@@ -10,7 +10,7 @@
 namespace FacSisEnero.Consultas {
     
     
-    public partial class cProductos {
+    public partial class cVentas {
         
         /// <summary>
         /// DesdeTextBox control.

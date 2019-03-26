@@ -1,11 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cProductos.aspx.cs" Inherits="FacSisEnero.Consultas.cProductos" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cVentas.aspx.cs" Inherits="FacSisEnero.Consultas.cVentas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="bg-dark p-5 text-center">
-            <h1 class="display-4 text-warning">Producto</h1>
+            <h1 class="display-4 text-warning">Venta</h1>
         </div>
     </div>
     <div class="form-row justify-content-center">
@@ -27,9 +26,10 @@
                 <asp:Label Text="Filtro" class="text-primary" runat="server" />
                 <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" runat="server">
                     <asp:ListItem>Todo</asp:ListItem>
-                    <asp:ListItem>ProductoId</asp:ListItem>
+                    <asp:ListItem>VentaId </asp:ListItem>
+                    <asp:ListItem>ClienteId </asp:ListItem>
                     <asp:ListItem>Fecha</asp:ListItem>
-                    <asp:ListItem>Nombre</asp:ListItem>
+                    
 
                 </asp:DropDownList>
             </div>

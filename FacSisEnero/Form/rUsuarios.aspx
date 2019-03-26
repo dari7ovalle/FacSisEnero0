@@ -5,10 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="card mx-auto mt-5">
-            <div class="card-header text-uppercase text-center text-primary">Registro Usuarios</div>
+            <div class="card-header text-uppercase text-center text-primary ">Registro Usuarios</div>
             <div class="card-body">
                 <div class="form-row">
                     <div class="form-group  col-sm-4 col-md-2  col-xs-5">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                        </asp:ScriptManager>
                         <asp:TextBox ID="UsuarioIdTextBox" runat="server" placeholder="Usuario Id" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator SetFocusOnError="true" ValidationGroup="Buscar" Display="Dynamic" ForeColor="Red" ErrorMessage="Usuario Id: No puede estar vacio" ControlToValidate="UsuarioIdTextBox" runat="server" />
                     </div>

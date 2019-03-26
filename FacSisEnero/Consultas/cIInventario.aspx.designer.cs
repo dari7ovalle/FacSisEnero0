@@ -10,7 +10,7 @@
 namespace FacSisEnero.Consultas {
     
     
-    public partial class cProductos {
+    public partial class cIInventario {
         
         /// <summary>
         /// DesdeTextBox control.
@@ -76,12 +76,12 @@ namespace FacSisEnero.Consultas {
         protected global::System.Web.UI.WebControls.LinkButton ImprimirLinkButton1;
         
         /// <summary>
-        /// ProductoGridView control.
+        /// InventarioGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProductoGridView;
+        protected global::System.Web.UI.WebControls.GridView InventarioGridView;
     }
 }

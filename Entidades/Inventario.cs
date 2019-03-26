@@ -14,7 +14,7 @@ namespace SisAgroVeterinaria.Entidades
         public int InventarioId { get; set; }
         public int ProductoId { get; set; }
         public int Cantidad { get; set; }
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public string Nombre { get; set; }
 
         public Inventario()
@@ -22,7 +22,7 @@ namespace SisAgroVeterinaria.Entidades
             this.InventarioId = 0;
             this.ProductoId = 0;
             this.Cantidad = 0;
-            this.Fecha = string.Empty;
+            this.Fecha = DateTime.Now;
             this.Nombre = string.Empty;
         }
 
@@ -31,7 +31,7 @@ namespace SisAgroVeterinaria.Entidades
 
 
 
-        public Inventario(int InventarioId, int ProductoId, int Cantidad, string Fecha, string Nombre)
+        public Inventario(int InventarioId, int ProductoId, int Cantidad, DateTime Fecha, string Nombre)
         {
             this.InventarioId = InventarioId;
             this.ProductoId = ProductoId;

@@ -1,11 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cProductos.aspx.cs" Inherits="FacSisEnero.Consultas.cProductos" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cIInventario.aspx.cs" Inherits="FacSisEnero.Consultas.cIInventario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+     <div class="container">
         <div class="bg-dark p-5 text-center">
-            <h1 class="display-4 text-warning">Producto</h1>
+            <h1 class="display-4 text-warning">Inventario</h1>
         </div>
     </div>
     <div class="form-row justify-content-center">
@@ -27,9 +26,11 @@
                 <asp:Label Text="Filtro" class="text-primary" runat="server" />
                 <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" runat="server">
                     <asp:ListItem>Todo</asp:ListItem>
+                      <asp:ListItem>InventarioId </asp:ListItem>
                     <asp:ListItem>ProductoId</asp:ListItem>
                     <asp:ListItem>Fecha</asp:ListItem>
-                    <asp:ListItem>Nombre</asp:ListItem>
+                  
+                  
 
                 </asp:DropDownList>
             </div>
@@ -38,7 +39,7 @@
                 <asp:TextBox ID="CriterioTextBox" class="form-control input-group" runat="server"></asp:TextBox>
             </div>
             <div class="col-lg-1 p-0">
-                <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click">
+                <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click" >
                 <span class="fas fa-search"></span>
                  Buscar
                 </asp:LinkButton>
@@ -56,15 +57,12 @@
 
 
     <div class="form-row justify-content-center">
-        <asp:GridView ID="ProductoGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None ">
+        <asp:GridView ID="InventarioGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None ">
             <AlternatingRowStyle BackColor="SkyBlue" />
             <Columns>
-                <asp:BoundField DataField="ProductoId" HeaderText="Producto Id" />
-                <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
-                <asp:BoundField DataField="Costo" HeaderText="Costo" />
-                <asp:BoundField DataField="Precio" HeaderText="Precio" />
-                <asp:BoundField DataField="TipoProductoId" HeaderText="TipoProductoId" />
+                <asp:BoundField DataField="InventarioId  ctoId" HeaderText="Inventario Id" />
+                <asp:BoundField DataField="Fecha" HeaderText="Fecha" />           
+                <asp:BoundField DataField="Cantidad " HeaderText="Cantidad" />
              
 
             </Columns>

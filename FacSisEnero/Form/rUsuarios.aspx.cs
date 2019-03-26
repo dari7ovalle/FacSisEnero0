@@ -54,7 +54,7 @@ namespace FacSisEnero.Form
             Usuarios usuarios = new Usuarios();
             bool paso = false;
 
-            //todo: validaciones adicionales
+          
             LlenaClase(usuarios);
 
             if (IsValid)
@@ -63,12 +63,11 @@ namespace FacSisEnero.Form
                 {
                     if (paso = repositorio.Guardar(usuarios))
 
-                        Utils.ShowToastr(this, "saved successfully", "Success", "success");
-                    //Response.Write("<script>alert('Guardado Correctamente');</script>");
-
+                        Utils.ShowToastr(this, "GUARDADO", "Success", "success");
+                    
                     else
                     {
-                        Response.Write("<script>alert('Error al Guardar');</script>");
+                        Utils.ShowToastr(this, "ERROR AL GUARDAR ", "Error", "error");
                     }
                     Limpiar();
                 }
@@ -77,12 +76,12 @@ namespace FacSisEnero.Form
                 {
                     if (paso = repositorio.Modificar(usuarios))
                     {
-                        Response.Write("<script>alert('Modificado Correctamente');</script>");
+                        Utils.ShowToastr(this, "Modificado ", "Info", "info");
                         Limpiar();
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al Modificar');</script>");
+                        Utils.ShowToastr(this, "ERROR AL MODIFICAR ", "Error", "error");
                     }
                 }
             }
@@ -97,12 +96,12 @@ namespace FacSisEnero.Form
             var usuario = repositorio.Buscar(id);
 
             if (usuario == null)
-                Utils.ShowToastr(this, "eliminated successfully", "Success", "success");
-            //Response.Write("<script>alert('Error al Eliminar');</script>");
+                Utils.ShowToastr(this, " Error Al ELIMINADO", "Error", "error");
+           
             else
                 repositorio.Eliminar(id);
-            Utils.ShowToastr(this, "saeliminated successfully", "Success", "error");
-            //Response.Write("<script>alert(' Usuario Eliminada');</script>");
+            Utils.ShowToastr(this, " ELIMINADO ", "Info", "info");
+
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
@@ -112,7 +111,7 @@ namespace FacSisEnero.Form
 
             if (usuarios != null)
             {
-                Utils.ShowToastr(this, "File Found", "Success", "info");
+                Utils.ShowToastr(this, "Encontrado", "Success", "info");
                 NombreTextBox.Text = usuarios.Nombre;
                 NombreUsuarioTextBox1.Text = usuarios.NombreUsuario;
                 CorreoTextBox1.Text = usuarios.Email;
@@ -126,8 +125,8 @@ namespace FacSisEnero.Form
             }
             else
             {
-                Utils.ShowToastr(this, "No Found", "Error", "error");
-                
+                Utils.ShowToastr(this, "No Se Encontro  Resultado", "Error", "error");
+
 
             }
 

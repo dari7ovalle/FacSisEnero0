@@ -3,7 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"> </asp:ScriptManager>
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate> 
+
+
 
     <div class="card card-register mx-auto mt-5">
         <div class="card-header text-uppercase text-center text-primary">Venta</div>
@@ -132,10 +136,14 @@
                     <div class="form-group">
                         <asp:Button class="btn btn-primary" ID="nuevoButton" runat="server" Text="Nuevo" />
                         <asp:Button class="btn btn-success" ValidationGroup="Guardar" ID="guardarButton" runat="server" Text="Guardar" OnClick="guardarButton_Click1" />
-                        <asp:Button class="btn btn-danger" ID="eliminarutton" ValidationGroup="Buscar" runat="server" Text="Eliminar" />
+                        <asp:Button class="btn btn-danger" ID="eliminarutton" ValidationGroup="Buscar" runat="server" Text="Eliminar" OnClick="eliminarutton_Click" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
+                
+            </ContentTemplate>
+        </asp:UpdatePanel>
+       
 </asp:Content>

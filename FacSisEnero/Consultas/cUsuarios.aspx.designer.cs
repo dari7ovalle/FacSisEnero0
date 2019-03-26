@@ -22,6 +22,15 @@ namespace FacSisEnero.Consultas {
         protected global::System.Web.UI.WebControls.DropDownList BuscarDropDownList;
         
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
         /// FiltroTextBox control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace FacSisEnero.Consultas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BuscarButton;
+        
+        /// <summary>
+        /// ImprimirLinkButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton ImprimirLinkButton1;
         
         /// <summary>
         /// DatosGridView control.

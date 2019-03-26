@@ -46,6 +46,30 @@ namespace BLL
             return facturas;
         }
 
+        public override List<Ventas> GetList(Expression<Func<Ventas, bool>> expression)
+        {
+            Contexto contexto = new Contexto();
+            List<Ventas> lista = new List<Ventas>();
+            try
+            {
+                lista = contexto.ventas.Where(expression).ToList();
+                foreach (var item in lista)
+                {
+                    item.Detalle.Count();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return lista;
+        }
+
         public override bool Modificar(Ventas ventas)
         {
             bool paso = false;
@@ -82,8 +106,6 @@ namespace BLL
             }
             return paso;
         }
-
-
 
 
     }

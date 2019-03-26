@@ -166,6 +166,15 @@ namespace FacSisEnero.Form {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator IdRegularExpressionValidator;
         
         /// <summary>
+        /// InventarioTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InventarioTextBox;
+        
+        /// <summary>
         /// NuevoButton control.
         /// </summary>
         /// <remarks>

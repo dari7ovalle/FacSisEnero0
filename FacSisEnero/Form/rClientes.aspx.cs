@@ -108,14 +108,13 @@ namespace FacSisEnero.Form
                 {
                     if (paso = repositorio.Modificar(clientes))
                     {
-                        Utils.ShowToastr(this, "saved modificar", "Success", "success");
-                       
-                       Limpiar();
+                        Utils.ShowToastr(this, "Modificado ", "Info", "info");
+                        Limpiar();
                     }
                     else
                     {
-                        Utils.ShowToastr(this, "no se pudo Modifica", "Error", "error");
-                      
+                        Utils.ShowToastr(this, "ERROR AL MODIFICAR ", "Error", "error");
+
                     }
                 }
             }
@@ -138,7 +137,7 @@ namespace FacSisEnero.Form
             
             else
                 repositorio.Eliminar(id);
-            Utils.ShowToastr(this, " Eliminated ", "Success", "info");
+            Utils.ShowToastr(this, " ELIMINADO ", "Info", "info");
           
         }
 

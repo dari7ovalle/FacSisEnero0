@@ -54,12 +54,12 @@ namespace FacSisEnero.Form
                     if (paso = repositorio.Guardar(tipoProductos))
                     {
 
-                        Utils.ShowToastr(this, "saved successfully", "Success", "success");
+                        Utils.ShowToastr(this, "GUARDADO", "Success", "success");
                         Limpiar();
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al Guardar');</script>");
+                        Utils.ShowToastr(this, "ERROR AL GUARDAR ", "Error", "error");
                     }
                     Limpiar();
                 }
@@ -68,12 +68,13 @@ namespace FacSisEnero.Form
                 {
                     if (paso = repositorio.Modificar(tipoProductos))
                     {
-                        Response.Write("<script>alert('Modificado Correctamente');</script>");
+                        Utils.ShowToastr(this, "Modificado ", "Info", "info");
                         Limpiar();
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al Modificar');</script>");
+                        Utils.ShowToastr(this, "ERROR AL MODIFICAR ", "Error", "error");
+
                     }
                 }
             }
@@ -88,11 +89,11 @@ namespace FacSisEnero.Form
             var tipoProductos = repositorio.Buscar(id);
 
             if (tipoProductos == null)
-                Utils.ShowToastr(this, "no found", "Error", "error");
+                Utils.ShowToastr(this, " ERROR AL ELIMINADO", "Error", "error");
 
             else
                 repositorio.Eliminar(id);
-            Utils.ShowToastr(this, " Eliminated ", "Success", "info");
+            Utils.ShowToastr(this, " ELIMINADO ", "Success", "info");
         }
 
         protected void NuevoButton_Click(object sender, EventArgs e)

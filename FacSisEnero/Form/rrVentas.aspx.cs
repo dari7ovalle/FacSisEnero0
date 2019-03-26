@@ -19,21 +19,37 @@ namespace FacSisEnero.Form
         string condicion = "[Seleccione]";
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+            
+
+
             if (!Page.IsPostBack)
             {
                 FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-
-                ViewState["Detalle"] = new Ventas();
                 LlenarDropDownListProductos();
                 LlenarDropDownListClientes();
                 LlenarConfiguracionesIdDropDownList1();
+                ViewState["Detalle"] = new Ventas();
                
-
 
             }
 
         }
+        private void Limpiar()
+        {
+            VentaIdTextBox.Text = "";
+            FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            ClienteDropDownList.SelectedIndex = 0;
+            ProductoDropDownList.SelectedIndex = 0;
+            CantidadTextBox.Text = "";
+            PrecioTextBox.Text = "";
+            ImporteTextBox.Text = "";
+            TotalVentaTextBox1.Text = "";
 
+            ViewState["Detalle"] = new Ventas();
+            //BindGrid();
+
+        }
         private void FiltraPrecio()
         {
             if (ProductoDropDownList.Text != condicion)
@@ -73,7 +89,7 @@ namespace FacSisEnero.Form
             ConfiguracionesIdDropDownList1.AppendDataBoundItems = true;
             ConfiguracionesIdDropDownList1.DataBind();
         }
-        
+
 
         private Ventas LlenaClase()
         {
@@ -90,10 +106,12 @@ namespace FacSisEnero.Form
         }
         private void LlenarCampos(Ventas ventas)
         {
-           // ConfiguracionesIdDropDownList1.SelectedValue = venta.ConfiguracionId.ToString();
+            ConfiguracionesIdDropDownList1.SelectedValue = ventas.ConfiguracionId.ToString();
             ClienteDropDownList.SelectedValue = ventas.ClienteId.ToString();
             DetalleGridView.DataSource = ventas.Detalle;
+            
             DetalleGridView.DataBind();
+            
             TotalVentaTextBox1.Text = ventas.TotalVenta.ToString();
         }
 
@@ -102,19 +120,25 @@ namespace FacSisEnero.Form
         {
             bool paso = false;
             VentaDetalle repositorio = new VentaDetalle();
-            //todo: agregar demas validaciones
+
             Ventas ventas = LlenaClase();
 
             if (Utils.ToInt(VentaIdTextBox.Text) == 0)
+            {
+
                 paso = repositorio.Guardar(ventas);
-
+                Limpiar();
+                // Utils.ShowToastr(this, "GUARDADO", "Success", "success");
+            }
             else
+            {
                 paso = repositorio.Modificar(ventas);
-
+                Utils.ShowToastr(this, "Modificado", "Info", "info");
+            }
             if (paso)
             {
                 Utils.ShowToastr(this, "Transacción exitosa", "Exito", "success");
-               // Limpiar
+                // Limpiar
             }
 
         }
@@ -122,31 +146,70 @@ namespace FacSisEnero.Form
         protected void LinkButton_Click(object sender, EventArgs e)
         {
             var ventaAnt = FacturaRepositorio.Buscar(Utils.ToInt(VentaIdTextBox.Text));
+            bool paso = false;
 
-            if(ventaAnt == null)
+            //if (Utils.ToInt(ProductoDropDownList.SelectedValue == DetalleGridView.ro))
+            if (DetalleGridView.Rows.Count > 0)
             {
-                Utils.ShowToastr(this, "Agregado", "Exito!!", "info");
-                venta = (Ventas)ViewState["Detalle"];
-                venta.AgregarProductos(Utils.ToInt(ProductoDropDownList.SelectedValue), Utils.ToInt(CantidadTextBox.Text), Utils.ToInt(PrecioTextBox.Text), Utils.ToDouble(ImporteTextBox.Text));
+                for (int i = 0; i < ((Ventas)ViewState["Detalle"]).Detalle.Count; i++)
+                {
+                    if (((Ventas)ViewState["Detalle"]).Detalle[i].ProductoId == Utils.ToInt(ProductoDropDownList.SelectedValue.ToString()))
+                    {
+                        ((Ventas)ViewState["Detalle"]).Detalle[i].Cantidad = ((Ventas)ViewState["Detalle"]).Detalle[i].Cantidad + Utils.ToInt(CantidadTextBox.Text.ToString());
+                        ((Ventas)ViewState["Detalle"]).Detalle[i].Importe = ((Ventas)ViewState["Detalle"]).Detalle[i].Cantidad * ((Ventas)ViewState["Detalle"]).Detalle[i].Precio;
+                        paso = true;
+                        break;
+                    }                  
+
+                }
+                if (!paso)
+                {
+                    if (ventaAnt == null)
+                    {
+
+                        venta = (Ventas)ViewState["Detalle"];
+                        venta.AgregarProductos(Utils.ToInt(ProductoDropDownList.SelectedValue), Utils.ToInt(CantidadTextBox.Text), Utils.ToInt(PrecioTextBox.Text), Utils.ToInt(CantidadTextBox.Text) * Utils.ToInt(PrecioTextBox.Text));
+
+                    }
+                    else
+                    {
+                        Utils.ShowToastr(this, "Agregado", "Exito!!", "info");
+                        ventaAnt = (Ventas)ViewState["Detalle"];
+                        ventaAnt.AgregarProductos(Utils.ToInt(ProductoDropDownList.SelectedValue), Utils.ToInt(CantidadTextBox.Text), Utils.ToInt(PrecioTextBox.Text), Utils.ToInt(CantidadTextBox.Text)* Utils.ToInt(PrecioTextBox.Text));
+
+                    }
+
+                }
             }
             else
             {
-                Utils.ShowToastr(this, "Agregado", "Exito!!", "info");
-                ventaAnt = (Ventas)ViewState["Modificado"];
-                ventaAnt.AgregarProductos(Utils.ToInt(ProductoDropDownList.SelectedValue), Utils.ToInt(CantidadTextBox.Text), Utils.ToInt(PrecioTextBox.Text), Utils.ToDouble(ImporteTextBox.Text));
+                if (ventaAnt == null)
+                {
 
+                    venta = (Ventas)ViewState["Detalle"];
+                    venta.AgregarProductos(Utils.ToInt(ProductoDropDownList.SelectedValue), Utils.ToInt(CantidadTextBox.Text), Utils.ToInt(PrecioTextBox.Text), Utils.ToDouble(ImporteTextBox.Text));
 
+                }
+                else
+                {
+                    Utils.ShowToastr(this, "Agregado", "Exito!!", "info");
+                    ventaAnt = (Ventas)ViewState["Detalle"];
+                    ventaAnt.AgregarProductos(Utils.ToInt(ProductoDropDownList.SelectedValue), Utils.ToInt(CantidadTextBox.Text), Utils.ToInt(PrecioTextBox.Text), Utils.ToDouble(ImporteTextBox.Text));
+
+                }
             }
 
-            ViewState["Venta"] = venta;
-            DetalleGridView.DataSource = ((Ventas)ViewState["Detalle"]).Detalle;
-            DetalleGridView.DataBind();
-            SubTotal();
+            
+                ViewState["Venta"] = venta;
+                DetalleGridView.DataSource = ((Ventas)ViewState["Detalle"]).Detalle;
+                DetalleGridView.DataBind();
+                SubTotal();
         }
 
         protected void ProductoDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             FiltraPrecio();
+            ImporteTextBox.Text = Calculos.Importe(Utils.ToDecimal(PrecioTextBox.Text), Utils.ToDecimal(CantidadTextBox.Text)).ToString();
         }
 
         protected void CantidadTextBox_TextChanged(object sender, EventArgs e)
@@ -157,24 +220,26 @@ namespace FacSisEnero.Form
         private string SubTotal()
         {
             decimal total = 0;
-            foreach (var item in venta.Detalle)
+            foreach (var item in ((Ventas)ViewState["Detalle"]).Detalle)
             {
                 total += Calculos.CalcularSubTotal(Convert.ToDecimal(item.Importe));
+                
             }
             return TotalVentaTextBox1.Text = total.ToString();
         }
 
+
         protected void ImporteTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (ImporteTextBox.Text != "")
+            if (ImporteTextBox.Text != " ")
                 TotalVentaTextBox1.Text = Calculos.CalcularSubTotal(Utils.ToDecimal(ImporteTextBox.Text)).ToString();
             else
-                TotalVentaTextBox1.Text = "";
+                TotalVentaTextBox1.Text = " ";
         }
 
         protected void BuscarLinkButton_Click(object sender, EventArgs e)
         {
-          
+
             VentaDetalle repositorio = new VentaDetalle();
             var ventas = repositorio.Buscar(
             Utils.ToInt(VentaIdTextBox.Text));
@@ -186,10 +251,15 @@ namespace FacSisEnero.Form
             else
             {
                 //Limpiar();
-                     Utils.ShowToastr(this,
-                    "No se pudo encontrar el presupuesto especificado",
-                    "Error", "error");
+                Utils.ShowToastr(this,
+               "No se pudo encontrar el presupuesto especificado",
+               "Error", "error");
             }
+        }
+
+        protected void eliminarutton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

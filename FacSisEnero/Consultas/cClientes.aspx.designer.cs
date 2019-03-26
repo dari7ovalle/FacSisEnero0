@@ -10,7 +10,7 @@
 namespace FacSisEnero.Consultas {
     
     
-    public partial class cProductos {
+    public partial class cClientes {
         
         /// <summary>
         /// DesdeTextBox control.
@@ -67,21 +67,30 @@ namespace FacSisEnero.Consultas {
         protected global::System.Web.UI.WebControls.LinkButton BuscarLinkButton;
         
         /// <summary>
-        /// ImprimirLinkButton1 control.
+        /// ClienteGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ImprimirLinkButton1;
+        protected global::System.Web.UI.WebControls.GridView ClienteGridView;
         
         /// <summary>
-        /// ProductoGridView control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProductoGridView;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// CuentasReportViewer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer CuentasReportViewer;
     }
 }

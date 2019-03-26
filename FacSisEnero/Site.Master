@@ -11,6 +11,17 @@
 <script src="/Scripts/bootstrap.bundle.min.js"></script>
 <script src="/Scripts/toastr.min.js"></script>
 
+<script type="text/javascript">
+        function openModal() {
+            $("#myModal").modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+            $("#myModal").modal("show");
+        }
+    </script>
+
+
 
 <html>
 <head runat="server">
@@ -50,7 +61,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/Consultas/cUsuarios.aspx ">Usuarios</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="/Consultas/cProductos.aspx">Producto</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
@@ -62,7 +73,22 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
             </asp:ContentPlaceHolder>
+             <!--Modal-->
+            <div class="modal fade" id="myModal" role="dialog" runat="server">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!--Body-->
+                        <div class="modal-body">
+                            <asp:Label ID="MessageLabel" CssClass="text-center" runat="server" Text="Label" EnableViewState="False"></asp:Label>
+                        </div>
 
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <footer>
 
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />

@@ -16,7 +16,7 @@ namespace FacSisEnero.Form
 
         }
 
-        private Ciudades LlenaClase(Ciudades ciudades)
+        public Ciudades LlenaClase(Ciudades ciudades)
         {
 
             ciudades.Nombres = NombreTextBox.Text;
@@ -45,21 +45,23 @@ namespace FacSisEnero.Form
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al Guardar');</script>");
+                        Utils.ShowToastr(this, "ERROR AL GUARDAR ", "Error", "error");
+                        Limpiar();
                     }
-                    Limpiar();
+                    
                 }
 
                 else
                 {
-                    if (paso = repositorio.Modificar(ciudades))
+                    if (repositorio.Modificar(LlenaClase(ciudades)))
                     {
-                        Response.Write("<script>alert('Modificado Correctamente');</script>");
-                       Limpiar();
+                        Utils.ShowToastr(this, "Modificado ", "Info", "info");
+                        Limpiar();
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al Modificar');</script>");
+                        Utils.ShowToastr(this, "ERROR AL MODIFICAR ", "Error", "error");
+
                     }
                 }
             }
@@ -90,13 +92,13 @@ namespace FacSisEnero.Form
                 if (ciudades != null)
                 {
 
-                    Utils.ShowToastr(this, " Encontrado ", "Success", "info");
+                    Utils.ShowToastr(this, " Encontrado ", "Info", "info");
                     Limpiar();
                     LlenaCampos(ciudades);
                 }
                 else
                 {
-                    Utils.ShowToastr(this, "No Hay Resultado", "Error", "error");
+                    Utils.ShowToastr(this, "No Se Encontro  Resultado", "Error", "error");
                    Limpiar();
                 }
             }
@@ -110,11 +112,11 @@ namespace FacSisEnero.Form
             var ciudades = repositorio.Buscar(id);
 
             if (ciudades == null)
-                Utils.ShowToastr(this, "no found", "Error", "error");
+                Utils.ShowToastr(this, " ERROR NO ENCONTRADO", "Error", "error");
 
             else
                 repositorio.Eliminar(id);
-            Utils.ShowToastr(this, " Eliminated ", "Success", "info");
+            Utils.ShowToastr(this, " ELIMINADO ", "Info", "info");
         }
 
         protected void NuevoButton_Click(object sender, EventArgs e)

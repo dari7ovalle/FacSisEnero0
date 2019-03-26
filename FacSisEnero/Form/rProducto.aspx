@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:LinkButton ID="BuscarLinkButton" ValidationGroup="Buscar" CssClass="btn btn-outline-info mt-4" runat="server">
+                    <asp:LinkButton ID="BuscarLinkButton" ValidationGroup="Buscar" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click">
                         <span> </span> Buscar
                     </asp:LinkButton>
                 </div>
@@ -57,18 +57,22 @@
             <div class="row">
                 <div class="form-group col-md-3">
                     <asp:Label Text="Precio" runat="server" />
-                    <asp:TextBox ID="PrecioTextBox" class="form-control input-sm" AutoCompleteType="Disabled" runat="server" MaxLength="11" placeholder="Precio"></asp:TextBox>
+                    <asp:TextBox ID="PrecioTextBox" class="form-control input-sm" AutoCompleteType="Disabled" runat="server" MaxLength="11" placeholder="Precio" OnTextChanged="PrecioTextBox_TextChanged"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="Guardar" ControlToValidate="PrecioTextBox" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="IdRegularExpressionValidator" runat="server" ControlToValidate="PrecioTextBox" ForeColor="Red" Display="Dynamic" ErrorMessage="Porfavor ingrese un numero" ValidationExpression="(^\d*\.?\d*[0-9]+\d*$)|(^[0-9]+\d*\.\d*$)" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
                 </div>
-            
-
+         
+                  <div class="form-group col-md-2">
+                    <label for="InventarioTextBox">Inventario</label>
+                    <asp:TextBox ID="InventarioTextBox" class="form-control input-sm" TextMode="Number" ReadOnly="true" runat="server" placeholder="0"></asp:TextBox>
+                </div>
+            </div>    
             <div class="card-footer">
                 <div class="text-center">
                     <div class="form-group" style="display: inline-block">
-                        <asp:Button Text="Nuevo" class="btn btn-outline-info btn-md" runat="server" ID="NuevoButton"  />
+                        <asp:Button Text="Nuevo" class="btn btn-outline-info btn-md" runat="server" ID="NuevoButton" OnClick="NuevoButton_Click"  />
                         <asp:Button Text="Guardar" class="btn btn-outline-success btn-md" runat="server" ValidationGroup="Guardar" ID="GuadarButton" OnClick="GuadarButton_Click"  />
-                        <asp:Button Text="Eliminar" class="btn btn-outline-danger btn-md" runat="server" ID="EliminarButton"  />
+                        <asp:Button Text="Eliminar" class="btn btn-outline-danger btn-md" runat="server" ID="EliminarButton" OnClick="EliminarButton_Click"  />
                     </div>
                 </div>
             </div>
@@ -78,5 +82,6 @@
     </div>
 
 </div>
+    </div>
     </div>
 </asp:Content>

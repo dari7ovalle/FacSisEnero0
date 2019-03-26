@@ -58,7 +58,7 @@ namespace FacSisEnero.Form
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al Guardar');</script>");
+                        Utils.ShowToastr(this, "ERROR AL GUARDAR ", "Error", "error");
                     }
                     Limpiar();
                 }
@@ -67,12 +67,12 @@ namespace FacSisEnero.Form
                 {
                     if (paso = repositorio.Modificar(configuraciones))
                     {
-                        Response.Write("<script>alert('Modificado Correctamente');</script>");
+                        Utils.ShowToastr(this, "Modificado ", "Info", "info");
                         Limpiar();
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al Modificar');</script>");
+                        Utils.ShowToastr(this, "ERROR AL MODIFICAR ", "Error", "error");
                     }
                 }
             }
@@ -86,11 +86,11 @@ namespace FacSisEnero.Form
             var configuraciones = repositorio.Buscar(id);
 
             if (configuraciones == null)
-                Utils.ShowToastr(this, "no found", "Error", "error");
+                Utils.ShowToastr(this, "Error Al Eliminar", "Error", "error");
 
             else
                 repositorio.Eliminar(id);
-            Utils.ShowToastr(this, " Eliminated ", "Success", "info");
+            Utils.ShowToastr(this, " ELIMINADO ", "Success", "info");
         }
 
         protected void NuevoButton_Click(object sender, EventArgs e)
