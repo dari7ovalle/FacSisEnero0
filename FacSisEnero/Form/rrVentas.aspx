@@ -105,9 +105,8 @@
                 </div>
             </div>
 
-
             <div class="form-row">
-                <asp:GridView ID="DetalleGridView" CssClass=" col-md-offset-4 col-sm-offset-4" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="244px" AutoGenerateColumns="false">
+                <asp:GridView ID="DetalleGridView" CssClass=" col-md-offset-4 col-sm-offset-4" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="244px" AutoGenerateColumns="False" >
                     <AlternatingRowStyle BackColor="White" />
 
                     <EditRowStyle BackColor="#2461BF" />
@@ -121,6 +120,11 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                     <Columns>
+                        <asp:TemplateField ShowHeader="False">
+                            <ItemTemplate>
+                               <%-- <asp:Button ID="EliminarFilaLinkButton" runat="server" CausesValidation="false" CommandName="Delete" Text="Quitar Fila" OnClick="ButtonRemover_Click"></asp:Button>--%>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:BoundField DataField="Id" HeaderText="Id" />
                         <asp:BoundField DataField="ProductoId" HeaderText="Producto" />
                         <asp:BoundField DataField="Precio" HeaderText="Precio" />
@@ -134,7 +138,7 @@
             <div class="col-md-4 col-md-offset-3">
                 <div class="card-footer">
                     <div class="form-group">
-                        <asp:Button class="btn btn-primary" ID="nuevoButton" runat="server" Text="Nuevo" />
+                        <asp:Button class="btn btn-primary" ID="nuevoButton" runat="server" Text="Nuevo" OnClick="nuevoButton_Click" />
                         <asp:Button class="btn btn-success" ValidationGroup="Guardar" ID="guardarButton" runat="server" Text="Guardar" OnClick="guardarButton_Click1" />
                         <asp:Button class="btn btn-danger" ID="eliminarutton" ValidationGroup="Buscar" runat="server" Text="Eliminar" OnClick="eliminarutton_Click" />
                     </div>

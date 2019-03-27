@@ -41,14 +41,16 @@
             </div>
             <div class="col-lg-1 p-0">
                 <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click1" />
-                Buscar</asp:LinkButton>
+                Buscar
+                </asp:LinkButton>
                 
             </div>
-        </div>
-        <div class="col-lg-1 p-0">
+             <div class="col-lg-1 p-0">
             <button type="button" class="btn btn-outline-info mt-4" data-toggle="modal" data-target=".bd-example-modal-lg">Imprimir</button>
 
         </div>
+        </div>
+
 
 
         <div class="form-row justify-content-center">
@@ -83,7 +85,7 @@
                     <div class="modal-body">
                         <div id="div1">
                             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                            <rsweb:ReportViewer ID="CuentasReportViewer" runat="server" ProcessingMode="Remote" Height="718px" Width="1000px">
+                            <rsweb:ReportViewer ID="ClientesReportViewer1" runat="server" ProcessingMode="Remote" Height="718px" Width="1000px">
                                 <ServerReport ReportPath="" ReportServerUrl="" />
                             </rsweb:ReportViewer>
                         </div>

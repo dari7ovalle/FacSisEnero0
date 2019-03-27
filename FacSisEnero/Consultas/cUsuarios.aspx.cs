@@ -1,4 +1,6 @@
-﻿using FacSisEnero.Reportes;
+﻿using BLL;
+using FacSisEnero.Reportes;
+using Microsoft.Reporting.WebForms;
 using SisAgroVeterinaria.Entidades;
 using System;
 using System.Collections.Generic;
@@ -14,10 +16,23 @@ namespace FacSisEnero.Consultas
     {
         public bool SeBusco { get; set; }
         Expression<Func<Usuarios, bool>> filter = x => true;
-        public static List<Usuarios> lista = new List<Usuarios>();
+        public static List<Usuarios> listaProducto = new List<Usuarios>();
+     
+        RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            listaProducto = repositorio.GetList(filter);
 
+            if (!IsPostBack)
+            {
+                UsuarioReportViewer1.ProcessingMode = ProcessingMode.Local;
+                UsuarioReportViewer1.Reset();
+                UsuarioReportViewer1.LocalReport.ReportPath = Server.MapPath(@"../Reportes/ListadoUsuario.rdlc");
+                UsuarioReportViewer1.LocalReport.DataSources.Clear();
+                UsuarioReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Usuario", repositorio.GetList(filter)));
+                UsuarioReportViewer1.LocalReport.Refresh();
+
+            }
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
@@ -51,6 +66,7 @@ namespace FacSisEnero.Consultas
 
         protected void ImprimirLinkButton1_Click(object sender, EventArgs e)
         {
+            Response.Redirect("../Reportes/ListadoUsuario.rdlc");
             //    if (SeBusco)
             //    {
             //        UsuarioReportes.LocalReport.DataSources.Clear();

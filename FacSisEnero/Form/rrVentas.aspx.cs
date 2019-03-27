@@ -45,8 +45,9 @@ namespace FacSisEnero.Form
             PrecioTextBox.Text = "";
             ImporteTextBox.Text = "";
             TotalVentaTextBox1.Text = "";
-
-            ViewState["Detalle"] = new Ventas();
+           DetalleGridView.DataSource = null;
+            DetalleGridView.DataBind();
+            //ViewState["Detalle"] = new Ventas();
             //BindGrid();
 
         }
@@ -101,18 +102,21 @@ namespace FacSisEnero.Form
             venta.Fecha = Convert.ToDateTime(FechaTextBox.Text);
             venta.TipoVenta = tipoVentaDropDownList.SelectedValue;
             venta.VentaId = Utils.ToInt(VentaIdTextBox.Text);
+            
 
             return venta;
         }
-        private void LlenarCampos(Ventas ventas)
+        private void LlenarCampos(Ventas venta)
         {
-            ConfiguracionesIdDropDownList1.SelectedValue = ventas.ConfiguracionId.ToString();
-            ClienteDropDownList.SelectedValue = ventas.ClienteId.ToString();
-            DetalleGridView.DataSource = ventas.Detalle;
-            
+           Ventas ventass = (Ventas)ViewState["Detalle"];
+            VentaDetalle ventaDetalle = new   VentaDetalle();
+            ConfiguracionesIdDropDownList1.SelectedValue = venta.ConfiguracionId.ToString();
+            ClienteDropDownList.SelectedValue = venta.ClienteId.ToString();
+            DetalleGridView.DataSource = venta.Detalle;
+          
             DetalleGridView.DataBind();
             
-            TotalVentaTextBox1.Text = ventas.TotalVenta.ToString();
+            TotalVentaTextBox1.Text = venta.TotalVenta.ToString();
         }
 
 
@@ -260,6 +264,28 @@ namespace FacSisEnero.Form
         protected void eliminarutton_Click(object sender, EventArgs e)
         {
 
+            VentaDetalle repositorio = new VentaDetalle();
+            Ventas vent = repositorio.Buscar(Utils.ToInt(VentaIdTextBox.Text));
+
+            if (vent != null)
+            {
+                repositorio.Eliminar(vent.VentaId);
+                Utils.ShowToastr(this, "Registro eliminado", "Exito", "success");
+                Limpiar();
+            }
+            else
+            {
+                Utils.ShowToastr(this, "Error al   eliminr", "Error", "error");
+
+                Limpiar();
+            }
+        }
+
+       
+
+        protected void nuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

@@ -69,7 +69,37 @@ namespace BLL
 
             return lista;
         }
+        public override  bool Eliminar(int id)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
 
+            try
+            {
+                Ventas facturas = contexto.ventas.Find(id);
+
+                foreach (var item in facturas.Detalle)
+                {
+                    contexto.productos.Find(item.ProductoId).Inventario += item.Cantidad;
+
+                }
+                contexto.ventas.RemoveRange(contexto.ventas.Where(d => d.VentaId == id));
+                contexto.ventas.Remove(facturas);
+                contexto.SaveChanges();
+                paso = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+
+            return paso;
+        }
         public override bool Modificar(Ventas ventas)
         {
             bool paso = false;

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UsuarioReproteViwe.aspx.cs" Inherits="FacSisEnero.Reportes.UsuarioReproteViwe" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UsuarioView.aspx.cs" Inherits="FacSisEnero.Reportes.UsuarioView" %>
 
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
@@ -11,8 +11,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-            <rsweb:ReportViewer ID="UsuarioReportes" runat="server"></rsweb:ReportViewer>
+             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <rsweb:ReportViewer ID="UsuarioReportViewer1" runat="server"></rsweb:ReportViewer>
         </div>
     </form>
 </body>

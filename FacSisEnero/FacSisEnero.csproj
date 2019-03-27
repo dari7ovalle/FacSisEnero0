@@ -149,7 +149,7 @@
     <Content Include="js\progressbootstrap.js" />
     <Content Include="LogIn.aspx" />
     <Content Include="Reportes\clientesReporteView.aspx" />
-    <Content Include="Reportes\UsuarioReproteViwe.aspx" />
+    <Content Include="Reportes\UsuarioView.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -174,9 +174,6 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
-    <Content Include="FacturacionWebDataSet.xsc">
-      <DependentUpon>FacturacionWebDataSet.xsd</DependentUpon>
-    </Content>
     <Content Include="ClientesDataSet.xsc">
       <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Content>
@@ -188,14 +185,7 @@
     <Content Include="ClientesDataSet.xss">
       <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Content>
-    <None Include="FacturacionWebDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FacturacionWebDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="FacturacionWebDataSet.xss">
-      <DependentUpon>FacturacionWebDataSet.xsd</DependentUpon>
-    </Content>
+    <None Include="Properties\PublishProfiles\Jhurileidy - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -281,11 +271,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FacturacionWebDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FacturacionWebDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Form\rCiudades.aspx.cs">
       <DependentUpon>rCiudades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -362,12 +347,12 @@
     <Compile Include="Reportes\clientesReporteView.aspx.designer.cs">
       <DependentUpon>clientesReporteView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\UsuarioReproteViwe.aspx.cs">
-      <DependentUpon>UsuarioReproteViwe.aspx</DependentUpon>
+    <Compile Include="Reportes\UsuarioView.aspx.cs">
+      <DependentUpon>UsuarioView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Reportes\UsuarioReproteViwe.aspx.designer.cs">
-      <DependentUpon>UsuarioReproteViwe.aspx</DependentUpon>
+    <Compile Include="Reportes\UsuarioView.aspx.designer.cs">
+      <DependentUpon>UsuarioView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -377,10 +362,10 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="UsuarioWebDataSet.Designer.cs">
+    <Compile Include="UsuarioDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UsuarioWebDataSet.xsd</DependentUpon>
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios\Utils.cs" />
   </ItemGroup>
@@ -402,16 +387,16 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="UsuarioWebDataSet.xsc">
-      <DependentUpon>UsuarioWebDataSet.xsd</DependentUpon>
+    <Content Include="UsuarioDataSet.xsc">
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </Content>
-    <None Include="UsuarioWebDataSet.xsd">
+    <None Include="UsuarioDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>UsuarioWebDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>UsuarioDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="UsuarioWebDataSet.xss">
-      <DependentUpon>UsuarioWebDataSet.xsd</DependentUpon>
+    <Content Include="UsuarioDataSet.xss">
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -438,9 +423,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\ListadoCliente.rdlc" />
+    <Content Include="Reportes\ListadoCliente.rdlc" />
+    <Content Include="Reportes\ListadoUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteProducto.rdlc" />
-    <EmbeddedResource Include="Reportes\UsuarioReporte.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
