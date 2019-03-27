@@ -35,14 +35,15 @@
 
                 </asp:DropDownList>
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-2">
                 <asp:Label ID="Label1" runat="server" Text="Buscar">Buscar:</asp:Label>
                 <asp:TextBox ID="CriterioTextBox" class="form-control input-group" runat="server"></asp:TextBox>
             </div>
             <div class="col-lg-1 p-0">
-                <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click1" />
+                <asp:LinkButton ID="BuscarLinkButton" Class="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click1" />
                 Buscar
-                </asp:LinkButton>
+                </div>
+                
                 
             </div>
              <div class="col-lg-1 p-0">
@@ -95,5 +96,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 </asp:Content>

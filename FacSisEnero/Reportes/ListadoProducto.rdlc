@@ -43,7 +43,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cliente Id</Value>
+                              <Value>Producto Id</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -84,7 +84,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombres</Value>
+                              <Value>Nombre</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -125,7 +125,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Apellidos</Value>
+                              <Value>Tipo Producto Id</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -166,7 +166,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ciudad Id</Value>
+                              <Value>Costo</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -207,7 +207,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cedula</Value>
+                              <Value>Precio</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -248,7 +248,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Direccion</Value>
+                              <Value>Activo</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -289,7 +289,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Celular</Value>
+                              <Value>Fecha</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -330,7 +330,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Telefono</Value>
+                              <Value>Inventario</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -369,14 +369,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ClienteId">
+                    <Textbox Name="ProductoId">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ClienteId.Value</Value>
+                              <Value>=Fields!ProductoId.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -386,7 +386,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ClienteId</rd:DefaultName>
+                      <rd:DefaultName>ProductoId</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -402,14 +402,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Nombres">
+                    <Textbox Name="Nombre">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nombres.Value</Value>
+                              <Value>=Fields!Nombre.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -419,7 +419,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Nombres</rd:DefaultName>
+                      <rd:DefaultName>Nombre</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -435,14 +435,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Apellidos">
+                    <Textbox Name="TipoProductoId">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Apellidos.Value</Value>
+                              <Value>=Fields!TipoProductoId.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -452,7 +452,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Apellidos</rd:DefaultName>
+                      <rd:DefaultName>TipoProductoId</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -468,14 +468,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CiudadId">
+                    <Textbox Name="Costo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CiudadId.Value</Value>
+                              <Value>=Fields!Costo.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -485,7 +485,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CiudadId</rd:DefaultName>
+                      <rd:DefaultName>Costo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -501,14 +501,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Cedula">
+                    <Textbox Name="Precio">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Cedula.Value</Value>
+                              <Value>=Fields!Precio.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -518,7 +518,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Cedula</rd:DefaultName>
+                      <rd:DefaultName>Precio</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -534,14 +534,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Direccion">
+                    <Textbox Name="Activo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Direccion.Value</Value>
+                              <Value>=Fields!Activo.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -551,7 +551,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Direccion</rd:DefaultName>
+                      <rd:DefaultName>Activo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -567,14 +567,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Celular">
+                    <Textbox Name="Fecha">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Celular.Value</Value>
+                              <Value>=Fields!Fecha.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -584,7 +584,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Celular</rd:DefaultName>
+                      <rd:DefaultName>Fecha</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -600,14 +600,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Telefono">
+                    <Textbox Name="Inventario">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Telefono.Value</Value>
+                              <Value>=Fields!Inventario.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -617,7 +617,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Telefono</rd:DefaultName>
+                      <rd:DefaultName>Inventario</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -929,7 +929,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Clientes</DataSetName>
+        <DataSetName>Producto</DataSetName>
         <Height>1.8cm</Height>
         <Width>20cm</Width>
         <Style>
@@ -945,7 +945,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!ClienteId.Value)</Value>
+                <Value>=Sum(Fields!ProductoId.Value)</Value>
                 <Style>
                   <FontWeight>Normal</FontWeight>
                   <Color>#333333</Color>
@@ -956,8 +956,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>4.48cm</Top>
-        <Left>1.79917cm</Left>
+        <Top>4.18979cm</Top>
+        <Left>1.19062cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>1</ZIndex>
@@ -979,7 +979,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>  Total:</Value>
+                <Value>Total:</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -989,8 +989,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
-        <Top>4.48cm</Top>
-        <Height>0.6cm</Height>
+        <Top>4.28597cm</Top>
+        <Height>0.65292cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -1007,10 +1007,10 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>9.09758in</Width>
+  <Width>7.87402in</Width>
   <Page>
     <PageHeader>
-      <Height>4.55731cm</Height>
+      <Height>4.11951cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1035,8 +1035,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.36724cm</Top>
-          <Left>8.06662cm</Left>
+          <Left>4.21979cm</Left>
           <Height>1.71125cm</Height>
           <Width>6.81271cm</Width>
           <Style>
@@ -1066,8 +1065,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>3.00453cm</Top>
-          <Left>15.21036cm</Left>
+          <Top>2.63729cm</Top>
+          <Left>12.10251cm</Left>
           <Height>0.6cm</Height>
           <Width>7.8975cm</Width>
           <ZIndex>1</ZIndex>
@@ -1096,8 +1095,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>3.78092cm</Top>
-          <Left>19.20557cm</Left>
+          <Top>3.48423cm</Top>
+          <Left>16.09772cm</Left>
           <Height>0.6cm</Height>
           <Width>3.90229cm</Width>
           <ZIndex>2</ZIndex>
@@ -1118,7 +1117,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reportes De Clientes</Value>
+                  <Value>Reportes De Productos</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <Color>Orange</Color>
@@ -1131,10 +1130,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>3.43696cm</Top>
-          <Left>8.06662cm</Left>
+          <Top>3.06972cm</Top>
+          <Left>5cm</Left>
           <Height>1.04979cm</Height>
-          <Width>5.62208cm</Width>
+          <Width>6.0325cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -1175,75 +1174,64 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="ClientesDataSet">
+    <DataSource Name="ProductolDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>298a573c-e418-43f4-b786-4b3efa9f5c50</rd:DataSourceID>
+      <rd:DataSourceID>3126e687-5342-4866-af2b-76d9eb5d9a6b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Clientes">
+    <DataSet Name="Producto">
       <Query>
-        <DataSourceName>ClientesDataSet</DataSourceName>
+        <DataSourceName>ProductolDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ClienteId">
-          <DataField>ClienteId</DataField>
+        <Field Name="ProductoId">
+          <DataField>ProductoId</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Nombres">
-          <DataField>Nombres</DataField>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Apellidos">
-          <DataField>Apellidos</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CiudadId">
-          <DataField>CiudadId</DataField>
+        <Field Name="TipoProductoId">
+          <DataField>TipoProductoId</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Cedula">
-          <DataField>Cedula</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="Costo">
+          <DataField>Costo</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Direccion">
-          <DataField>Direccion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="Precio">
+          <DataField>Precio</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Celular">
-          <DataField>Celular</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="Activo">
+          <DataField>Activo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Telefono">
-          <DataField>Telefono</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="Fecha">
+          <DataField>Fecha</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Inventario">
+          <DataField>Inventario</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>ClientesDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Dari\source\repos\FacSisEnero\FacSisEnero\ClientesDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Clientes</rd:TableName>
+        <rd:DataSetName>ProductolDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Dari\source\repos\FacSisEnero\FacSisEnero\ProductolDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Productos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ClientesTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>ProductosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <EmbeddedImages>
-    <EmbeddedImage Name="images11">
-      <MIMEType>image/jpeg</MIMEType>
-      <ImageData>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</ImageData>
-    </EmbeddedImage>
-  </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>081eeed6-dbe0-4f3b-9191-0957da4c6430</rd:ReportID>
+  <rd:ReportID>6491f95d-44f5-4381-a5b1-678c405dba26</rd:ReportID>
 </Report>

@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Microsoft.Reporting.WebForms;
 using SisAgroVeterinaria.Entidades;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,16 @@ namespace FacSisEnero.Consultas
         RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                ProductoReportViewer1.ProcessingMode = ProcessingMode.Local;
+                ProductoReportViewer1.Reset();
+                ProductoReportViewer1.LocalReport.ReportPath = Server.MapPath(@"../Reportes/ListadoProducto.rdlc");
+                ProductoReportViewer1.LocalReport.DataSources.Clear();
+                ProductoReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Producto", repositorio.GetList(filtro)));
+                ProductoReportViewer1.LocalReport.Refresh();
+
+            }
             HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
@@ -48,8 +59,11 @@ namespace FacSisEnero.Consultas
             }
 
             listaProducto = repositorio.GetList(filtro);
-           ProductoGridView.DataSource = listaProducto;
+            ProductoGridView.DataSource = listaProducto;
             ProductoGridView.DataBind();
+
         }
     }
+
+       
 }

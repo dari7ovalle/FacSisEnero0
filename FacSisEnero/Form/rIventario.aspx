@@ -27,13 +27,13 @@
                 </div>
 
             </div>
-            <div class="row">
+           <%-- <div class="row">
                 <div class="form-group col-md-3">
                     <asp:Label Text="Nombre" runat="server" />
                     <asp:TextBox ID="NombreTextBox" class="form-control input-sm" AutoCompleteType="Disabled" runat="server" placeholder="Nombres"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RFVNombre" ValidationGroup="Guardar" ControlToValidate="NombreTextBox" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="NombreTextBox" ForeColor="Red" Display="Dynamic" ErrorMessage="Porfavor Digite Solo Letras" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
-                </div>
+                </div>--%>
                 </div>
             <div class="row">
                 <div class="form-group col-md-3">

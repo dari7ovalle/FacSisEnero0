@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Microsoft.Reporting.WebForms;
 using SisAgroVeterinaria.Entidades;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,16 @@ namespace FacSisEnero.Consultas
         RepositorioBase<Inventario> repositorio = new RepositorioBase<Inventario>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                InventarioReportViewer1.ProcessingMode = ProcessingMode.Local;
+                InventarioReportViewer1.Reset();
+                InventarioReportViewer1.LocalReport.ReportPath = Server.MapPath(@"../Reportes/ListadoInventario.rdlc");
+                InventarioReportViewer1.LocalReport.DataSources.Clear();
+                InventarioReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Inventario", repositorio.GetList(filtro)));
+                InventarioReportViewer1.LocalReport.Refresh();
+
+            }
             HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }

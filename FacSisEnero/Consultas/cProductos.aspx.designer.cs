@@ -58,24 +58,6 @@ namespace FacSisEnero.Consultas {
         protected global::System.Web.UI.WebControls.TextBox CriterioTextBox;
         
         /// <summary>
-        /// BuscarLinkButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BuscarLinkButton;
-        
-        /// <summary>
-        /// ImprimirLinkButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ImprimirLinkButton1;
-        
-        /// <summary>
         /// ProductoGridView control.
         /// </summary>
         /// <remarks>
@@ -83,5 +65,23 @@ namespace FacSisEnero.Consultas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView ProductoGridView;
+        
+        /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// ProductoReportViewer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer ProductoReportViewer1;
     }
 }

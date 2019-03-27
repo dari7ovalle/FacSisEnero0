@@ -10,7 +10,7 @@
 
 
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header text-uppercase text-center text-primary">Venta</div>
+        <div class="card-header bg-dark text-uppercase text-center text-primary">Venta</div>
         <div class="card-body">
             <div class="form-row">
                 <div class="form-group col-md-1">

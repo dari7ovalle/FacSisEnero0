@@ -100,6 +100,36 @@ namespace BLL
 
             return paso;
         }
+        public override bool Guardar(Ventas factura)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                if (contexto.ventas.Add(factura) != null)
+                {
+                    foreach (var item in factura.Detalle)
+                    {
+                        
+                        contexto.productos.Find(item.ProductoId).Inventario -= item.Cantidad;
+                    }
+
+                    contexto.SaveChanges();
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return paso;
+        }
         public override bool Modificar(Ventas ventas)
         {
             bool paso = false;

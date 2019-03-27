@@ -149,7 +149,10 @@
     <Content Include="js\progressbootstrap.js" />
     <Content Include="LogIn.aspx" />
     <Content Include="Reportes\clientesReporteView.aspx" />
+    <Content Include="Reportes\InventarioView.aspx" />
+    <Content Include="Reportes\ProductoView.aspx" />
     <Content Include="Reportes\UsuarioView.aspx" />
+    <Content Include="Reportes\VentasView.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -184,6 +187,39 @@
     </None>
     <Content Include="ClientesDataSet.xss">
       <DependentUpon>ClientesDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="InentarioDataSet.xsc">
+      <DependentUpon>InentarioDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="FISEneroNewFinalDataSet.xsc">
+      <DependentUpon>FISEneroNewFinalDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="FISEneroNewFinalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FISEneroNewFinalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="FISEneroNewFinalDataSet.xss">
+      <DependentUpon>FISEneroNewFinalDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="InentarioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InentarioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="InentarioDataSet.xss">
+      <DependentUpon>InentarioDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="ProductolDataSet.xsc">
+      <DependentUpon>ProductolDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="ProductolDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductolDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ProductolDataSet.xss">
+      <DependentUpon>ProductolDataSet.xsd</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Jhurileidy - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
@@ -271,6 +307,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FISEneroNewFinalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FISEneroNewFinalDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form\rCiudades.aspx.cs">
       <DependentUpon>rCiudades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -327,12 +368,22 @@
     <Compile Include="Form\rUsuarios.aspx.designer.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InentarioDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InentarioDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductolDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductolDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -347,12 +398,33 @@
     <Compile Include="Reportes\clientesReporteView.aspx.designer.cs">
       <DependentUpon>clientesReporteView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\InventarioView.aspx.cs">
+      <DependentUpon>InventarioView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\InventarioView.aspx.designer.cs">
+      <DependentUpon>InventarioView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ProductoView.aspx.cs">
+      <DependentUpon>ProductoView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ProductoView.aspx.designer.cs">
+      <DependentUpon>ProductoView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\UsuarioView.aspx.cs">
       <DependentUpon>UsuarioView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Reportes\UsuarioView.aspx.designer.cs">
       <DependentUpon>UsuarioView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VentasView.aspx.cs">
+      <DependentUpon>VentasView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\VentasView.aspx.designer.cs">
+      <DependentUpon>VentasView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -368,6 +440,16 @@
       <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios\Utils.cs" />
+    <Compile Include="Venta1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Venta1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="VentaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VentaDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -398,6 +480,28 @@
     <Content Include="UsuarioDataSet.xss">
       <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="VentaDataSet.xsc">
+      <DependentUpon>VentaDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Venta1DataSet.xsc">
+      <DependentUpon>Venta1DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Venta1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Venta1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Venta1DataSet.xss">
+      <DependentUpon>Venta1DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="VentaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VentaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="VentaDataSet.xss">
+      <DependentUpon>VentaDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -421,11 +525,16 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Reportes\ListadoCliente.rdlc" />
     <Content Include="Reportes\ListadoUsuario.rdlc" />
-    <EmbeddedResource Include="Reportes\ReporteProducto.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reportes\ListadoInventario.rdlc" />
+    <Content Include="Reportes\ListadoProducto.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reportes\ListadoVenta.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

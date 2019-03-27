@@ -1,4 +1,6 @@
-﻿using SisAgroVeterinaria.Entidades;
+﻿using BLL;
+using Microsoft.Reporting.WebForms;
+using SisAgroVeterinaria.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +14,24 @@ namespace FacSisEnero.Consultas
     public partial class cVentas : System.Web.UI.Page
     {
         Expression<Func<Ventas, bool>> filtro;// = p => true;
-        VentaDetalles VentaRepositorio = new VentaDetalles();
-        public static List<Ventas> listFacturas { get; set; }
+        RepositorioBase<Ventas> repositorio = new RepositorioBase<Ventas>();
+        public  List<Ventas> listFacturas= new  List<Ventas>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                VentaReportViewer1.ProcessingMode = ProcessingMode.Local;
+                VentaReportViewer1.Reset();
+                VentaReportViewer1.LocalReport.ReportPath = Server.MapPath(@"../Reportes/ListadoVenta.rdlc");
+                VentaReportViewer1.LocalReport.DataSources.Clear();
+                VentaReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Venta", repositorio.GetList(filtro)));
+                VentaReportViewer1.LocalReport.Refresh();
 
+            }
             DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-           // listFacturas = VentaRepositorio.GetList(x => true);
+           listFacturas = repositorio.GetList(x=>true);
 
         }
 
@@ -51,9 +62,9 @@ namespace FacSisEnero.Consultas
                     break;
             }
 
-            //listFacturas = VentaRepositorio.GetList(filtro);
-            //FacturaGridView.DataSource = listFacturas;
-           // FacturaGridView.DataBind();
+            listFacturas = repositorio.GetList(filtro);
+            ProductoGridView.DataSource = listFacturas;
+            ProductoGridView.DataBind();
         }
     }
     }

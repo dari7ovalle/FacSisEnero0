@@ -74,12 +74,13 @@ namespace FacSisEnero.Consultas
                     filtro = c => true;
                     break;
 
-                case 1://PrestamoId
+                case 1://Id
                     id = Utils.ToInt(CriterioTextBox.Text);
                     filtro = c => c.ClienteId == id;
                     break;
 
                 case 2://Fecha
+                  
                     filtro = p => true && p.Fecha >= desde && p.Fecha <= hasta;
                     break;
                 case 3:
