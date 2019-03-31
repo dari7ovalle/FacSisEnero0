@@ -86,7 +86,7 @@
                 </div>
                 <div class="form-group col-md-1">
                     <asp:Label Text="Cantidad" runat="server" />
-                    <asp:TextBox ID="CantidadTextBox" class="form-control input-sm" AutoPostBack="true" AutoCompleteType="Disabled" OnTextChanged="CantidadTextBox_TextChanged" TextMode="Number" runat="server" placeholder="0"></asp:TextBox>
+                    <asp:TextBox ID="CantidadTextBox" class="form-control input-sm" AutoPostBack="true"  minlength="1"   AutoCompleteType="Disabled" OnTextChanged="CantidadTextBox_TextChanged" TextMode="Number" runat="server" placeholder="0"></asp:TextBox>
 
                 </div>
                 <div class="form-group col-md-1">

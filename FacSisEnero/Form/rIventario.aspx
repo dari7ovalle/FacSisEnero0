@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="form-group  col-md-3">
                     <asp:Label ID="Label5" runat="server" Text="Cantidad:"></asp:Label>
-                    <asp:TextBox ID="CantidadTextBox1" type="text" runat="server" TextMode="Phone" CssClass="form-control " placeholder="Ingrese un Cantidad " minlength="1" MaxLength="5"></asp:TextBox>
+                    <asp:TextBox ID="CantidadTextBox1" type="text" runat="server" TextMode="Number" CssClass="form-control " placeholder="Ingrese un Cantidad " minlength="1" MaxLength="5"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ValidationGroup="Guardar" ControlToValidate="CantidadTextBox1" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="CantidadTextBox1" ForeColor="Red" Display="Dynamic" ErrorMessage="Porfavor ingrese un numero" ValidationExpression="(^\d*\.?\d*[0-9]+\d*$)|(^[0-9]+\d*\.\d*$)" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
                 </div>

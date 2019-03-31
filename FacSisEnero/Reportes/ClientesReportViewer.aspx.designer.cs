@@ -10,7 +10,7 @@
 namespace FacSisEnero.Reportes {
     
     
-    public partial class ProductoView {
+    public partial class ClientesReportViewer {
         
         /// <summary>
         /// form1 control.
@@ -31,12 +31,12 @@ namespace FacSisEnero.Reportes {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// ProductoReportViewer1 control.
+        /// ListadoReportViewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ProductoReportViewer1;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer ListadoReportViewer;
     }
 }

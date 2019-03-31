@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cProductos.aspx.cs" Inherits="FacSisEnero.Consultas.cProductos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CProductos.aspx.cs" Inherits="FacSisEnero.Consultas.CProductos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+       <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
     <div class="container">
         <div class="bg-dark p-5 text-center">
@@ -40,10 +40,18 @@
                 <asp:TextBox ID="CriterioTextBox" class="form-control input-group" runat="server"></asp:TextBox>
             </div>
             <div class="col-lg-1 p-0">
-             
-            <button type="button" class="btn btn-outline-info mt-4" data-toggle="modal" data-target=".bd-example-modal-lg">Imprimir</button>
+                    <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-outline-info mt-4" OnClick="BuscarLinkButton_Click"     runat="server">
+                <span class="fa fa-search"></span>
+                 Buscar
+                    </asp:LinkButton>
+                </div>
+                <div class="col-lg-1 p-0">
+                    <asp:LinkButton ID="ImprimirLinkButton" CssClass="btn btn-info mt-4"  runat="server" OnClick="ImprimirLinkButton_Click">
+                            <span class="fa fa-print"></span>
+                            Imprimir
+                    </asp:LinkButton>
+                </div>
 
-        </div>
                
               
             </div>
@@ -68,27 +76,7 @@
 
 
         </asp:GridView>
- <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" style="max-width:1000px!important;min-width:900px!important">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Reporte de Producto</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="div1">
-                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                            <rsweb:ReportViewer ID="ProductoReportViewer1" runat="server" ProcessingMode="Remote" Height="718px" Width="1000px">
-                                <ServerReport ReportPath="" ReportServerUrl="" />
-                            </rsweb:ReportViewer>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
+
 </asp:Content>

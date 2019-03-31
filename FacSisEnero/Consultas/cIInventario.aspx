@@ -41,16 +41,18 @@
                 <asp:TextBox ID="CriterioTextBox" class="form-control input-group" runat="server"></asp:TextBox>
             </div>
             <div class="col-lg-1 p-0">
-                <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click" >
+                <asp:LinkButton ID="BuscarLinkButton" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="BuscarLinkButton_Click"  >
                 <span class="fas fa-search"></span>
                  Buscar
                 </asp:LinkButton>
             </div>
         </div>
-       <div class="col-lg-1 p-0">
-            <button type="button" class="btn btn-outline-info mt-4" data-toggle="modal" data-target=".bd-example-modal-lg">Imprimir</button>
-
-        </div>
+         <div class="col-lg-1 p-0">
+                    <asp:LinkButton ID="ImprimirLinkButton" CssClass="btn btn-info mt-4"  runat="server" OnClick="ImprimirLinkButton_Click">
+                            <span class="fa fa-print"></span>
+                            Imprimir
+                    </asp:LinkButton>
+                </div>
 
 
     </div>
@@ -60,36 +62,15 @@
         <asp:GridView ID="InventarioGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None ">
             <AlternatingRowStyle BackColor="SkyBlue" />
             <Columns>
-                <asp:BoundField DataField="InventarioId  ctoId" HeaderText="Inventario Id" />
+                <asp:BoundField DataField="InventarioId" HeaderText="Inventario Id" />
                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" />           
-                <asp:BoundField DataField="Cantidad " HeaderText="Cantidad" />
+                <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
              
 
             </Columns>
 
 
         </asp:GridView>
-         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" style="max-width:1000px!important;min-width:900px!important">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Reporte de Inventario</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="div1">
-                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                            <rsweb:ReportViewer ID="InventarioReportViewer1" runat="server" ProcessingMode="Remote" Height="718px" Width="1000px">
-                                <ServerReport ReportPath="" ReportServerUrl="" />
-                            </rsweb:ReportViewer>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </asp:Content>

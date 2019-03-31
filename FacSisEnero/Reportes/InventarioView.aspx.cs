@@ -1,4 +1,5 @@
 ﻿using BLL;
+using FacSisEnero.Consultas;
 using Microsoft.Reporting.WebForms;
 using SisAgroVeterinaria.Entidades;
 using System;
@@ -24,7 +25,7 @@ namespace FacSisEnero.Reportes
                 InventarioReportViewer1.Reset();
                 InventarioReportViewer1.LocalReport.ReportPath = Server.MapPath(@"../Reportes/ListadoInventario.rdlc");
                 InventarioReportViewer1.LocalReport.DataSources.Clear();
-                InventarioReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Inventario", repositorio.GetList(filtro)));
+                InventarioReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Inventario", cIInventario.listaProducto));
                 InventarioReportViewer1.LocalReport.Refresh();
 
             }

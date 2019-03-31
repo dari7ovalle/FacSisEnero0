@@ -61,11 +61,11 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/Consultas/cUsuarios.aspx ">Usuarios</a>
-                        <a class="dropdown-item" href="/Consultas/cProductos.aspx">Producto</a>
-                        <a class="dropdown-item" href="/Consultas/cClientes.aspx">Cliente</a>
+                        <a class="dropdown-item" href="/Consultas/CProductos.aspx">Producto</a>                     
                         <a class="dropdown-item" href="/Consultas/cUsuarios.aspx">Usuario</a>
                         <a class="dropdown-item" href="/Consultas/cIInventario.aspx">Inventario</a>
-                        <a class="dropdown-item" href="/Consultas/cVentas.aspx"> Ventas</a>
+                        <a class="dropdown-item" href="/Consultas/cClientes.aspx"> Clientes</a>
+                        <a class="dropdown-item" href="/Consultas/cVentas.aspx"> Venta</a>
                     </div>
                 </li>
             </ul>

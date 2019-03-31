@@ -47,15 +47,12 @@
             </div>
         </div>
         <div class="col-lg-1 p-0">
-            <asp:LinkButton ID="ImprimirLinkButton1" CssClass="btn btn-outline-info mt-4" runat="server">
+            <asp:LinkButton ID="ImprimirLinkButton1" CssClass="btn btn-outline-info mt-4" runat="server" OnClick="ImprimirLinkButton1_Click">
                 <span class="fas fa-search"></span>
                  Imprimir
             </asp:LinkButton>
         </div>
-         <div class="col-lg-1 p-0">
-            <button type="button" class="btn btn-outline-info mt-4" data-toggle="modal" data-target=".bd-example-modal-lg">Imprimir</button>
-
-        </div>
+      
 
     </div>
 
@@ -64,39 +61,19 @@
         <asp:GridView ID="ProductoGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None ">
             <AlternatingRowStyle BackColor="SkyBlue" />
             <Columns>
-                <asp:BoundField DataField="ProductoId" HeaderText="Producto Id" />
+                <asp:BoundField DataField="VentaId" HeaderText="Venta Id" />
+                <asp:BoundField DataField="ClienteId" HeaderText="Cliente Id" />
                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
-                <asp:BoundField DataField="Costo" HeaderText="Costo" />
-                <asp:BoundField DataField="Precio" HeaderText="Precio" />
-                <asp:BoundField DataField="TipoProductoId" HeaderText="TipoProductoId" />
+                <asp:BoundField DataField="ConfiguracionId" HeaderText="Configuracio" />
+                <asp:BoundField DataField="TipoVenta" HeaderText="TipoVenta" />
+                <asp:BoundField DataField="TotalVenta" HeaderText="TotalVenta" />
+                <asp:BoundField DataField="UsuarioId" HeaderText="UsuarioId" />
              
 
             </Columns>
 
 
         </asp:GridView>
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" style="max-width:1000px!important;min-width:900px!important">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Reporte de Venta</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="div1">
-                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                            <rsweb:ReportViewer ID="VentaReportViewer1" runat="server" ProcessingMode="Remote" Height="718px" Width="1000px">
-                                <ServerReport ReportPath="" ReportServerUrl="" />
-                            </rsweb:ReportViewer>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </asp:Content>

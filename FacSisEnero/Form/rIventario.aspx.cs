@@ -37,7 +37,7 @@ namespace FacSisEnero.Form
             inventarios.InventarioId = Utils.ToInt(InventarioIdTextBox.Text);
               inventarios.Fecha = Convert.ToDateTime(FechaTextBox.Text);
             inventarios.ProductoId = Utils.ToInt(ProductoIdDropDownList.SelectedValue);
-            // inventarios.Nombre = NombreTextBox.Text;
+            inventarios.Nombre = " inventario";
             inventarios.Cantidad = Utils.ToInt(CantidadTextBox1.Text);
 
 

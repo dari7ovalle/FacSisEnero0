@@ -15,32 +15,29 @@ namespace FacSisEnero.Consultas
     {
         Expression<Func<Ventas, bool>> filtro;// = p => true;
         RepositorioBase<Ventas> repositorio = new RepositorioBase<Ventas>();
-        public  List<Ventas> listFacturas= new  List<Ventas>();
+        public  static List<Ventas> listFacturas= new  List<Ventas>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                VentaReportViewer1.ProcessingMode = ProcessingMode.Local;
-                VentaReportViewer1.Reset();
-                VentaReportViewer1.LocalReport.ReportPath = Server.MapPath(@"../Reportes/ListadoVenta.rdlc");
-                VentaReportViewer1.LocalReport.DataSources.Clear();
-                VentaReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Venta", repositorio.GetList(filtro)));
-                VentaReportViewer1.LocalReport.Refresh();
-
-            }
+            
             DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-           listFacturas = repositorio.GetList(x=>true);
+           
 
         }
 
         protected void BuscarLinkButton_Click(object sender, EventArgs e)
         {
+
             int id = 0;
             DateTime desde = Convert.ToDateTime(DesdeTextBox.Text);
             DateTime hasta = Convert.ToDateTime(HastaTextBox.Text);
 
+            if (hasta < desde)
+            {
+                Utils.ShowToastr(this, "No Sera Posible Hacer Una Consulta Si El Rango Hasta Es Menor Que El Desde!!", "Fechas Invalidas!!", "warning");
+                return;
+            }
             switch (FiltroDropDownList.SelectedIndex)
             {
                 case 0://Todo
@@ -56,15 +53,20 @@ namespace FacSisEnero.Consultas
                     id = Utils.ToInt(CriterioTextBox.Text);
                     filtro = p => p.ClienteId.Equals(id) && p.Fecha >= desde && p.Fecha <= hasta;
                     break;
-                case 3://monto
-                    decimal monto = Utils.ToDecimal(CriterioTextBox.Text);
-                    filtro = p => p.ClienteId.Equals(monto) && p.Fecha >= desde && p.Fecha <= hasta;
-                    break;
+                //case 3://monto
+                //    decimal monto = Utils.ToDecimal(CriterioTextBox.Text);
+                //    filtro = p => p.ClienteId.Equals(monto) && p.Fecha >= desde && p.Fecha <= hasta;
+                //    break;
             }
 
             listFacturas = repositorio.GetList(filtro);
             ProductoGridView.DataSource = listFacturas;
             ProductoGridView.DataBind();
+        }
+
+        protected void ImprimirLinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Reportes/VentasView.aspx");
         }
     }
     }

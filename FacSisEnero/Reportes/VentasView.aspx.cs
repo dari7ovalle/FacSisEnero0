@@ -1,4 +1,5 @@
 ﻿using BLL;
+using FacSisEnero.Consultas;
 using Microsoft.Reporting.WebForms;
 using SisAgroVeterinaria.Entidades;
 using System;
@@ -13,9 +14,7 @@ namespace FacSisEnero.Reportes
 {
     public partial class VentasView : System.Web.UI.Page
     {
-        Expression<Func<Ventas, bool>> filtro = c => true;
-        public static List<Ventas> listaProducto = new List<Ventas>();
-        RepositorioBase<Ventas> repositorio = new RepositorioBase<Ventas>();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,7 +24,7 @@ namespace FacSisEnero.Reportes
                 VentaReportViewer1.Reset();
                 VentaReportViewer1.LocalReport.ReportPath = Server.MapPath(@"../Reportes/ListadoVenta.rdlc");
                 VentaReportViewer1.LocalReport.DataSources.Clear();
-                VentaReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Venta", repositorio.GetList(filtro)));
+                VentaReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Venta", cVentas.listFacturas));
                 VentaReportViewer1.LocalReport.Refresh();
 
             }

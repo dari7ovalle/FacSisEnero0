@@ -48,7 +48,7 @@ namespace FacSisEnero.Form
         {
           
             cliente.ClienteId = Utils.ToInt(ClienteIdTextBox.Text);
-            cliente.Fecha = Convert.ToDateTime(FechaTextBox.Text).Date;
+            cliente.Fecha = Convert.ToDateTime(FechaTextBox.Text);
             cliente.Nombres = NombreTextBox.Text;
             cliente.Apellidos = ApellidoTextBox.Text;
             cliente.Direccion = DireccionTextBox.Text;
