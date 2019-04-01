@@ -20,12 +20,12 @@ namespace FacSisEnero.Reportes
 
             if (!IsPostBack)
             {
-                VentaReportViewer1.ProcessingMode = ProcessingMode.Local;
-                VentaReportViewer1.Reset();
-                VentaReportViewer1.LocalReport.ReportPath = Server.MapPath(@"../Reportes/ListadoVenta.rdlc");
-                VentaReportViewer1.LocalReport.DataSources.Clear();
-                VentaReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Venta", cVentas.listFacturas));
-                VentaReportViewer1.LocalReport.Refresh();
+                //VentaReportViewer1.ProcessingMode = ProcessingMode.Local;
+                //VentaReportViewer1.Reset();
+                //VentaReportViewer1.LocalReport.ReportPath = Server.MapPath(@"../Reportes/ListadoVenta.rdlc");
+                //VentaReportViewer1.LocalReport.DataSources.Clear();
+                //VentaReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Venta", cVentas.listFacturas));
+                //VentaReportViewer1.LocalReport.Refresh();
 
             }
         }

@@ -6,19 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.38796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.38796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.89067cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>7.54321cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>0.07938cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -38,7 +38,7 @@
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
+                                <Color>Teal</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -79,7 +79,7 @@
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
+                                <Color>Teal</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -120,7 +120,7 @@
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
+                                <Color>Teal</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -161,7 +161,7 @@
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
+                                <Color>Teal</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -198,7 +198,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre</Value>
+                              <Value />
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -369,14 +369,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Nombre">
+                    <Textbox Name="Textbox15">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nombre.Value</Value>
+                              <Value />
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -386,7 +386,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Nombre</rd:DefaultName>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -436,7 +436,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -599,7 +598,7 @@
         </TablixRowHierarchy>
         <DataSetName>Inventario</DataSetName>
         <Height>1.8cm</Height>
-        <Width>12.5cm</Width>
+        <Width>18.28916cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -610,7 +609,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.66921in</Width>
+  <Width>7.20046in</Width>
   <Page>
     <PageHeader>
       <Height>4.11951cm</Height>
